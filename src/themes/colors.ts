@@ -1,10 +1,11 @@
-import { green } from "./palette";
+import { green } from './palette';
 
 export const colors = {
-    primary: {
-      main: green[400],
-      light: green[300],
-      dark: green[500],
-    },
-  };
-  
+  primary: {
+    main: green[400],
+    light: green[300],
+    dark: green[500],
+  },
+  white: '#FFFFFF',
+  black: '#000000'
+};

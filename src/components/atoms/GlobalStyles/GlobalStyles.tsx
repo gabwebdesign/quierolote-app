@@ -1,19 +1,31 @@
-import { Global, css } from '@emotion/react';
+import { theme } from '@/themes/theme';
+import { Styles } from '@/types/common';
+import { Global } from '@emotion/react';
 
-const GlobalStylesCss = css`
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
+const generalStyles = (): Styles => ({
+  '*': {
+    boxSizing: 'border-box',
+    padding: 0,
+    margin: 0,
+  },
+  html: { maxwidth: '100vw', overflowx: 'hidden' },
+  body: {
+    maxwidth: '100vw',
+    overflowx: 'hidden',
+  },
+});
 
-  html,
-  body {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-`;
+const globalClasses = (): Styles => ({
+  '.font-regular': {
+    fontWeight: theme.fontWeight.regular,
+  },
+  '.font-bold': {
+    fontWeight: theme.fontWeight.bold,
+  },
+});
+
+const GlobalStylesCSS = [{ ...generalStyles(), ...globalClasses() }];
 
 export const GlobalStyles = () => {
-  return <Global styles={GlobalStylesCss} />;
+  return <Global styles={GlobalStylesCSS} />;
 };

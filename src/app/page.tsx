@@ -1,7 +1,9 @@
+import { Button } from "@/components/atoms/Button/Button";
+
 export default function Home() {
   return (
     <main>
-      <p>Homepage</p>
+      <Button color="primary" variant="outlined">Test</Button>
     </main>
   );
 }
