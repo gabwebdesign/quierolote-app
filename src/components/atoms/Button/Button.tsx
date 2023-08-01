@@ -22,7 +22,7 @@ type Variant = 'text' | 'outlined' | 'contained';
 type Color = 'primary' | 'white';
 
 export const Button = ({
-  tag,
+  tag = 'button',
   children,
   startIcon,
   endIcon,
@@ -32,7 +32,7 @@ export const Button = ({
   color = 'primary',
   ...rest
 }: ButtonProps) => {
-  const ButtonComponent = ButtonStyles.withComponent(tag || 'button');
+  const ButtonComponent = ButtonStyles.withComponent(tag);
 
   const handleOnClick = (event: MouseEvent<HTMLButtonElement>) => {
     if (onClick) {

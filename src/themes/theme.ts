@@ -10,6 +10,17 @@ export const theme = {
   },
   fontWeight: {
     regular: 400,
-    bold: 800
+    bold: 700
+  },
+  fontFamily: {
+    roboto: 'Roboto'
+  },
+  fontSizes: {
+    xs: '10px',
+    s: '',
+    m: '',
+    l: '',
+    xl: '',
+    xxl: ''
   }
 };

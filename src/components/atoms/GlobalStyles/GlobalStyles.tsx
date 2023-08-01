@@ -7,11 +7,12 @@ const generalStyles = (): Styles => ({
     boxSizing: 'border-box',
     padding: 0,
     margin: 0,
+    fontFamily: theme.fontFamily.roboto
   },
   html: { maxwidth: '100vw', overflowx: 'hidden' },
   body: {
-    maxwidth: '100vw',
-    overflowx: 'hidden',
+    maxWidth: '100vw',
+    overflowX: 'hidden',
   },
 });
 
