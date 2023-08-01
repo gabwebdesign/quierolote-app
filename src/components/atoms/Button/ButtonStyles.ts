@@ -31,40 +31,25 @@ const ButtonBasic = (theme?: Theme): Styles => ({
   },
 });
 
-const ButtonText = (
-  color: ButtonStylesProps['color'],
-  theme: Theme
-): Styles => ({
+const ButtonText = (): Styles => ({
   background: 'none',
-  color: getButtonColor(color, theme),
 });
 
-const ButtonContained = (
-  color: ButtonStylesProps['color'],
-  theme: Theme
-): Styles => ({
+const ButtonContained = (theme: Theme): Styles => ({
   padding: '11px 14px',
   borderRadius: 8,
-  backgroundColor: getButtonColor(color, theme),
   color: theme.colors.white,
   justifyContent: 'center',
 });
 
-const ButtonOutlined = (
-  color: ButtonStylesProps['color'],
-  theme: Theme
-): Styles => {
-  const textBorderColor = getButtonColor(color, theme);
-
-  return {
-    padding: '11px 14px',
-    background: 'transparent',
-    border: `3px solid ${textBorderColor}`,
-    borderRadius: 8,
-    color: textBorderColor,
-    justifyContent: 'center',
-  };
-};
+const ButtonOutlined = (): Styles => ({
+  padding: '11px 14px',
+  background: 'transparent',
+  borderRadius: 8,
+  justifyContent: 'center',
+  borderStyle: 'solid',
+  borderWidth: 3,
+});
 
 const getButtonColor = (
   color: ButtonStylesProps['color'],
@@ -77,11 +62,28 @@ const getButtonColor = (
   return colors[color || 'primary'];
 };
 
-const getButtonStyles = ({ theme, variant, color }: ButtonStylesProps) => ({
-  ...ButtonBasic(theme),
-  ...(variant === 'contained' && ButtonContained(color, theme!)),
-  ...(variant === 'outlined' && ButtonOutlined(color, theme!)),
-  ...(variant === 'text' && ButtonText(color, theme!)),
-});
+const getButtonStyles = ({ theme, variant, color }: ButtonStylesProps) => {
+  const textBorderColor = getButtonColor(color, theme!);
+
+  return {
+    ...ButtonBasic(theme),
+    ...(variant === 'contained' && {
+      ...ButtonContained(theme!),
+      backgroundColor: textBorderColor,
+      ...(textBorderColor === theme?.colors.white && {
+        color: theme.colors.primary.main,
+      }),
+    }),
+    ...(variant === 'outlined' && {
+      ...ButtonOutlined(),
+      color: textBorderColor,
+      borderColor: textBorderColor,
+    }),
+    ...(variant === 'text' && {
+      ...ButtonText(),
+      color: textBorderColor,
+    }),
+  };
+};
 
 export const ButtonStyles = styled.button<ButtonStylesProps>(getButtonStyles);
