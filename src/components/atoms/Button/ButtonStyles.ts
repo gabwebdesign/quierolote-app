@@ -69,10 +69,10 @@ const getButtonStyles = ({ theme, variant, color }: ButtonStylesProps) => {
     ...ButtonBasic(theme),
     ...(variant === 'contained' && {
       ...ButtonContained(theme!),
-      backgroundColor: textBorderColor,
       ...(textBorderColor === theme?.colors.white && {
         color: theme.colors.primary.main,
       }),
+      backgroundColor: textBorderColor,
     }),
     ...(variant === 'outlined' && {
       ...ButtonOutlined(),
