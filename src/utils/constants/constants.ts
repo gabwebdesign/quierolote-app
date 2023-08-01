@@ -1,0 +1,1 @@
+export const SUBSTRACT_WHEN_MAXWIDTH = 0.02;
