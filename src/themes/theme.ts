@@ -22,5 +22,13 @@ export const theme = {
     l: '',
     xl: '',
     xxl: ''
+  },
+  container: {
+    gutters: {
+      mobile: '10px',
+      desktop: '15px'
+    }
   }
 };
+
+export type Breakpoints = keyof typeof theme.breakpoints;

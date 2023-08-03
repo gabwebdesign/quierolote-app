@@ -1,4 +1,5 @@
 import { Button } from '@/components/atoms/Button/Button';
+import { Container } from '@/components/atoms/Container/Container';
 import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({
@@ -11,9 +12,9 @@ const roboto = Roboto({
 export default function Home() {
   return (
     <main className={roboto.className}>
-      <Button>
-        Test
-      </Button>
+      <Container maxWidth="xl">
+        <Button>Test</Button>
+      </Container>
     </main>
   );
 }
