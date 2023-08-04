@@ -16,19 +16,13 @@ export const theme = {
     roboto: 'Roboto'
   },
   fontSizes: {
-    xs: '10px',
-    s: '',
-    m: '',
-    l: '',
-    xl: '',
-    xxl: ''
-  },
-  container: {
-    gutters: {
-      mobile: '10px',
-      desktop: '15px'
-    }
+    xxs:'10px',
+    xs: '14px',
+    s: '16px',
+    m: '18px',
+    l: '20px',
+    xl: '24px',
+    xxl: '36px',
+    title:'50px',
   }
 };
-
-export type Breakpoints = keyof typeof theme.breakpoints;
