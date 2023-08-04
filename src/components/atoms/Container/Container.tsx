@@ -3,7 +3,7 @@ import { HTMLAttributes, ReactNode } from 'react';
 import { ContainerStyles } from './ContainerStyles';
 import { Breakpoints } from '@/themes/theme';
 
-export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
+export interface ContainerProps extends HTMLAttributes<HTMLElement> {
   tag?: Tag;
   children?: ReactNode;
   maxWidth?: Breakpoints;
