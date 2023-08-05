@@ -9,6 +9,7 @@ interface IconStylesProps extends IconProps {
 }
 
 const IconBasic = (): Styles => ({
+  display: 'block',
   '.icon': {
     display: 'block',
     color: 'inherit',

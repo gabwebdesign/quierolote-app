@@ -5,17 +5,15 @@ import { Icons } from './AvailableIcons';
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
   name?: AvailableIcons;
-  iconWidth?: string;
-  iconHeight?: string;
   fill?: string;
 }
 
 type AvailableIcons = keyof typeof Icons;
 
 export const Icon = ({
-  fill = '#000',
-  iconHeight,
-  iconWidth,
+  fill = '#44A31E',
+  height,
+  width,
   name = 'Logo',
   ...rest
 }: IconProps) => {
@@ -23,8 +21,8 @@ export const Icon = ({
 
   return (
     <IconStyles
-      width={iconWidth}
-      height={iconHeight ? iconHeight : iconWidth}
+      width={width}
+      height={height ? height : width}
       color={fill}
     >
       <Icon className='icon' fill={fill} {...rest} />

@@ -164,10 +164,79 @@ const Search = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   );
 };
 
+const Correduria = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      width="75.459"
+      height="50.087"
+      viewBox="0 0 75.459 50.087"
+      fill={fill}
+      {...rest}
+    >
+      <defs>
+        <clipPath>
+          <rect
+            data-name="Rectángulo 67"
+            width="75.459"
+            height="50.087"
+            transform="translate(0 0)"
+            fill="none"
+          />
+        </clipPath>
+      </defs>
+      <g data-name="Grupo 29" transform="translate(0 0)">
+        <g data-name="Grupo 28" clipPath="url(#clip-path)">
+          <path
+            data-name="Trazado 26"
+            d="M1.5,10.4H13.925S22.3-.214,32.913,1.74"
+            fill="none"
+            stroke={fill}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3"
+          />
+          <path
+            data-name="Trazado 27"
+            d="M73.959,10.4H61.394S49.806-5.481,36.962,5.948L25.234,16.539s-4.018,4.381,0,8.8c2.959,3.251,7.978,2.017,10.471-.7,2.545-2.769,8.517-8.1,8.517-8.1"
+            fill="none"
+            stroke={fill}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3"
+          />
+          <path
+            id="Trazado_28"
+            data-name="Trazado 28"
+            d="M2.757,36.364h9.075s5.724-.279,8.935,6.283c0,0,6.714,11.245,13.681,2.792,0,0,11.448,6.7,11.727-4.887a7.069,7.069,0,0,0,8.378.7c5.023-2.961.558-9.074.558-9.074L42.995,17.644"
+            fill="none"
+            stroke={fill}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3"
+          />
+          <line
+            data-name="Línea 6"
+            x1="12.939"
+            transform="translate(56.632 36.135)"
+            fill="none"
+            stroke={fill}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
 export const Icons = {
   Logo,
   LogoSymbol,
   LogoStacked,
   Agent,
   Search,
+  Correduria,
 };
