@@ -10,7 +10,8 @@ export const theme = {
   },
   fontWeight: {
     regular: 400,
-    bold: 700
+    bold: 700,
+    medium: 500
   },
   fontFamily: {
     roboto: 'Roboto'
