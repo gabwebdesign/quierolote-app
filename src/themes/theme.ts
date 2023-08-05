@@ -16,6 +16,12 @@ export const theme = {
   fontFamily: {
     roboto: 'Roboto'
   },
+  container: {
+    gutters: {
+      mobile: '10px',
+      desktop: '15px'
+    }
+  },
   fontSizes: {
     xxs:'10px',
     xs: '14px',
