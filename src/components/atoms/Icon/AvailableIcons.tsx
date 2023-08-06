@@ -407,8 +407,8 @@ const Suelo = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
       </clipPath>
     </defs>
     <g data-name="Group 85" transform="translate(0 0)" clip-path="url(#clip-path)">
-      <path data-name="Path 73" d="M26.66,5.851S29.723.405,35.85,1.7a.979.979,0,0,1,.775.933c.052,1.945-.473,7.115-7.213,9.086" transform="translate(-15.702 -0.883)" fill="none" stroke={fill} strokLinecap="round" strokLinejoin="round" strokeWidth="1"/>
-      <path data-name="Path 74" d="M12.514,25.651v-9.6c-.061-.489-.36-2.124-.36-2.124C9.739,7.334,4.545,7.154,2.608,7.335a1.022,1.022,0,0,0-.88.836c-2.065,9.206,10.581,9.98,10.581,9.98" transform="translate(-0.884 -4.297)" fill="none" stroke={fill} straokLinecap="round" strokLinejoin="round" strokeWidth="1"/>
+      <path data-name="Path 73" d="M26.66,5.851S29.723.405,35.85,1.7a.979.979,0,0,1,.775.933c.052,1.945-.473,7.115-7.213,9.086" transform="translate(-15.702 -0.883)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
+      <path data-name="Path 74" d="M12.514,25.651v-9.6c-.061-.489-.36-2.124-.36-2.124C9.739,7.334,4.545,7.154,2.608,7.335a1.022,1.022,0,0,0-.88.836c-2.065,9.206,10.581,9.98,10.581,9.98" transform="translate(-0.884 -4.297)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
     </g>
   </svg>   
   );
