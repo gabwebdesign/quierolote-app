@@ -397,6 +397,86 @@ const Mide = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   );
 };
 
+const Suelo = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg data-name="Group 86" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="21.542" height="21.971" viewBox="0 0 21.542 21.971"
+    fill={fill} {...rest}>
+    <defs>
+      <clipPath id="clipPath">
+        <rect data-name="Rectangle 150" width="21.542" height="21.971" transform="translate(0 0)" fill="none" stroke="#707070" strokeWidth="1"/>
+      </clipPath>
+    </defs>
+    <g data-name="Group 85" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path data-name="Path 73" d="M26.66,5.851S29.723.405,35.85,1.7a.979.979,0,0,1,.775.933c.052,1.945-.473,7.115-7.213,9.086" transform="translate(-15.702 -0.883)" fill="none" stroke={fill} strokLinecap="round" strokLinejoin="round" strokeWidth="1"/>
+      <path data-name="Path 74" d="M12.514,25.651v-9.6c-.061-.489-.36-2.124-.36-2.124C9.739,7.334,4.545,7.154,2.608,7.335a1.022,1.022,0,0,0-.88.836c-2.065,9.206,10.581,9.98,10.581,9.98" transform="translate(-0.884 -4.297)" fill="none" stroke={fill} straokLinecap="round" strokLinejoin="round" strokeWidth="1"/>
+    </g>
+  </svg>   
+  );
+};
+
+const Topografia = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16"
+      fill={fill} {...rest}>
+      <g data-name="Grupo 77" transform="translate(-725.75 -648)">
+        <g data-name="Polígono 8" transform="translate(730.75 648)" fill="#f5f2f2">
+          <path d="M 17.14507484436035 15.5 L 0.8549256324768066 15.5 L 9 1.019867777824402 L 17.14507484436035 15.5 Z" stroke={fill}/>
+          <path d="M 9 2.039735794067383 L 1.709850311279297 15 L 16.2901496887207 15 L 9 2.039735794067383 M 9 0 L 18 16 L 0 16 L 9 0 Z" stroke={fill} fill="#5fbf38"/>
+        </g>
+        <g data-name="Polígono 9" transform="translate(725.75 651)" fill="#f5f2f2">
+          <path d="M 13.16288661956787 12.5 L 0.837113082408905 12.5 L 7 1.054638624191284 L 13.16288661956787 12.5 Z" stroke={fill}/>
+          <path d="M 7 2.109258651733398 L 1.674216270446777 12 L 12.32578372955322 12 L 7 2.109258651733398 M 7 0 L 14 13 L 0 13 L 7 0 Z" stroke={fill} fill="#5fbf38"/>
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+const Alquiler = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="23.242" height="9.552" viewBox="0 0 23.242 9.552"
+      fill={fill} {...rest}>
+      <g data-name="Grupo 84" transform="translate(-557.258 -756.385)">
+        <g data-name="Elipse 13" transform="translate(557.258 756.385)" fill="none" stroke={fill} strokeWidth="1">
+          <ellipse cx="4.776" cy="4.776" rx="4.776" ry="4.776" stroke="none"/>
+          <ellipse cx="4.776" cy="4.776" rx="4.276" ry="4.276" fill="none"/>
+        </g>
+        <line data-name="Línea 30" x2="14.509" transform="translate(565.991 761.161)" fill="none" stroke={fill} strokeWidth="1"/>
+        <line data-name="Línea 32" y2="4.776" transform="translate(579.969 761.155)" fill="none" stroke={fill} strokeWidth="1"/>
+        <line data-name="Línea 33" y2="4.776" transform="translate(576.012 761.161)" fill="none" stroke={fill} strokeWidth="1"/>
+      </g>
+    </svg>
+  );
+};
+
+const Servicios = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="10.4" height="22.568" viewBox="0 0 10.4 22.568"
+      fill={fill} {...rest}>
+      <path data-name="Trazado 72" d="M817.074,3630.916l-8.5,11.833h8.5l-6.664,10.17" transform="translate(-807.599 -3630.624)" fill="none" stroke={fill} strokeWidth="1"/>
+    </svg>
+  );
+};
+
+const Star = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="18.845" height="17.978" viewBox="0 0 18.845 17.978"
+      fill={fill} {...rest}>
+      <defs>
+        <clipPath id="clipPath">
+          <rect data-name="Rectángulo 139" width="18.845" height="17.978" fill="none" stroke="#707070" strokeWidth="1"/>
+        </clipPath>
+      </defs>
+      <g data-name="Grupo 69" transform="translate(0 0)">
+        <g data-name="Grupo 68" transform="translate(0 0)" clip-path="url(#clip-path)">
+          <path data-name="Trazado 66" d="M10.36,1.5l2.091,6.438h6.769l-5.476,3.978,2.091,6.438L10.36,14.375,4.884,18.353l2.091-6.438L1.5,7.938H8.269Z" transform="translate(-0.937 -0.938)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+
 export const Icons = {
   Logo,
   LogoSymbol,
@@ -410,5 +490,10 @@ export const Icons = {
   EstudioFinanciero,
   EstudioPrecios,
   TramitesBancarios,
-  Mide
+  Mide,
+  Suelo,
+  Topografia,
+  Alquiler,
+  Servicios,
+  Star
 };
