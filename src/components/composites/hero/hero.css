@@ -1,0 +1,11 @@
+
+.hero{
+    width: 100%;
+    background: #6A1A75;
+    display: flex;
+}
+
+.hero div{
+    width: 50%;
+}
+

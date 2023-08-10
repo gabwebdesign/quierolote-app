@@ -15,5 +15,6 @@ export const colors = {
     dark:gray[400]
   },
   white: '#FFFFFF',
-  black: '#000000'
+  black: '#000000',
+  purple:'#6A1A75'
 };
