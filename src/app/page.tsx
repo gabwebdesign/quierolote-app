@@ -13,6 +13,7 @@ export default function Home() {
   return (
     <main className={roboto.className}>
       <Header />
+      <Hero />
       {/* <Hero>
         <Container maxWidth="xl">
           <div className="hero">

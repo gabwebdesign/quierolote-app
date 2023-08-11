@@ -16,6 +16,7 @@ const TypographyBasic = (theme: Theme): Styles => ({
 const TypographyParagraph = (theme: Theme): Styles => ({
   fontSize: theme.fontSizes.m,
   fontWeight: theme.fontWeight.regular,
+  color: theme.colors.secondary.main
 });
 
 const TypographyHeadingOne = (theme: Theme): Styles => ({

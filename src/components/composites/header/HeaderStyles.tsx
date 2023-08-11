@@ -15,10 +15,14 @@ const HeaderNav = (theme: Theme): Styles => ({
   '& nav': {
     display: 'flex',
     justifyContent: 'space-between',
-    [generateBreakpoint('min-width', theme.breakpoints.md)]: {
+    [generateBreakpoint('max-width', theme.breakpoints.md)]: {
       display: 'block',
     },
   },
+  'nav div':{
+    display:'flex',
+    width:'50%'
+  }
 });
 
 const generateHeaderStyles = ({ theme }: HeaderStylesProps) => ({
