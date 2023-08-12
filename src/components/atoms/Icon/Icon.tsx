@@ -11,7 +11,7 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 type AvailableIcons = keyof typeof Icons;
 
 export const Icon = ({
-  fill = '#44A31E',
+  fill = '#8517BF',
   height,
   width,
   name = 'Logo',

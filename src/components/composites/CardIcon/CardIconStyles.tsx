@@ -11,14 +11,24 @@ const CardIconBase = (): Styles => ({
   padding: '38px 0 0 32px',
   minWidth:'222px',
   minHeight:'222px',
-  border:'1px solid #000',
-  borderRadius:'8px',
-  flexDirection:'column'
+  borderRadius:'10px',
+  flexDirection:'column',
+  boxShadow: '2px 2px 5px 1px rgba(0,0,0,.18)'
 });
+
+const CardIconElements = (): Styles => ({
+    '& span':{
+        marginBottom: '29px',
+    },
+    '& p':{
+        maxWidth: '150px',
+    }
+  });
 
 
 const generateCardIconStyles = ({ theme }: CardIconStylesProps) => ({
   ...CardIconBase(),
+  ...CardIconElements()
 });
 
 export const CardIconStyles =

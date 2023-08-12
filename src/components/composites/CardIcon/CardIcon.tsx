@@ -19,7 +19,7 @@ export const CardIcon = ({
   return (
     <CardIconStyles>
         <Icon name={iconName} width={75} height={50} />
-        <Typography>
+        <Typography fontWeight='bold'>
              {serviceName}
         </Typography>
     </CardIconStyles>

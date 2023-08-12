@@ -231,6 +231,30 @@ const Correduria = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   );
 };
 
+const Publicidad = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
+  return (
+      <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="68.192" height="53.389" viewBox="0 0 68.192 53.389"
+        fill={fill}
+            {...rest}
+        >
+        <defs>
+          <clipPath id="clipPath">
+            <rect data-name="Rectángulo 69" width="68.192" height="53.389" transform="translate(0 0)" fill="none"/>
+          </clipPath>
+        </defs>
+        <g data-name="Grupo 31" transform="translate(0 0)">
+          <g data-name="Grupo 30" clipPath="url(#clip-path)">
+            <line data-name="Línea 7" y2="20.774" transform="translate(1.5 16.139)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
+            <line data-name="Línea 8" x1="53.276" y1="13.638" transform="translate(1.5 34.058)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
+            <line data-name="Línea 9" x1="53.916" y2="14.113" transform="translate(1.5 5.515)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
+            <path data-name="Trazado 29" d="M39.8,43.863C38.249,48.171,34.557,51.2,30.25,51.2c-5.708,0-10.335-5.322-10.335-11.887" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
+            <rect data-name="Rectángulo 68" width="6.978" height="50.389" rx="2.326" transform="translate(59.714 1.5)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
+          </g>
+        </g>
+      </svg>
+  );
+};
+
 const Diseño = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   return (
       <svg 
@@ -272,7 +296,7 @@ const Peritaje = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="49.106" height="53.814" viewBox="0 0 49.106 53.814"
         fill={fill} {...rest}>
       <defs>
-        <clipPath id="clip-path">
+        <clipPath id="clipPath">
           <rect data-name="Rectángulo 70" width="49.106" height="53.814" transform="translate(0 0)" fill="none"/>
         </clipPath>
       </defs>
@@ -320,7 +344,7 @@ const EstudioFinanciero = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
           </clipPath>
         </defs>
         <g data-name="Grupo 44" transform="translate(0 0)">
-          <g data-name="Grupo 43" clip-path="url(#clip-path)">
+          <g data-name="Grupo 43" clipPath="url(#clip-path)">
             <path data-name="Trazado 39" d="M52.761,6.355V28.74a5.088,5.088,0,0,1-5.087,5.088H10.195A5.088,5.088,0,0,1,5.108,28.74V6.355" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
             <path data-name="Trazado 40" d="M38.832,49.975l-9.9-9.272V33.828" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
             <line data-name="Línea 19" y1="9.272" x2="9.692" transform="translate(19.243 40.703)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
@@ -366,7 +390,7 @@ const TramitesBancarios = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
         <line data-name="Línea 22" y2="19.968" transform="translate(36.833 22.722)" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
         <line data-name="Línea 23" y2="19.968" transform="translate(22.774 22.722)" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
         <g data-name="Grupo 48">
-          <g data-name="Grupo 47" clip-path="url(#clip-path)">
+          <g data-name="Grupo 47" clipPath="url(#clip-path)">
             <line data-name="Línea 24" x1="49.41" transform="translate(5.251 50.024)" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
             <path data-name="Trazado 45" d="M54.554,18.028H4.4a2.9,2.9,0,1,1,0-5.791L29.905,1.5,54.554,12.237a2.9,2.9,0,1,1,0,5.791Z" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
           </g>
@@ -406,7 +430,7 @@ const Suelo = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
         <rect data-name="Rectangle 150" width="21.542" height="21.971" transform="translate(0 0)" fill="none" stroke="#707070" strokeWidth="1"/>
       </clipPath>
     </defs>
-    <g data-name="Group 85" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <g data-name="Group 85" transform="translate(0 0)" clipPath="url(#clip-path)">
       <path data-name="Path 73" d="M26.66,5.851S29.723.405,35.85,1.7a.979.979,0,0,1,.775.933c.052,1.945-.473,7.115-7.213,9.086" transform="translate(-15.702 -0.883)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
       <path data-name="Path 74" d="M12.514,25.651v-9.6c-.061-.489-.36-2.124-.36-2.124C9.739,7.334,4.545,7.154,2.608,7.335a1.022,1.022,0,0,0-.88.836c-2.065,9.206,10.581,9.98,10.581,9.98" transform="translate(-0.884 -4.297)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
     </g>
@@ -468,7 +492,7 @@ const Star = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
         </clipPath>
       </defs>
       <g data-name="Grupo 69" transform="translate(0 0)">
-        <g data-name="Grupo 68" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <g data-name="Grupo 68" transform="translate(0 0)" clipPath="url(#clip-path)">
           <path data-name="Trazado 66" d="M10.36,1.5l2.091,6.438h6.769l-5.476,3.978,2.091,6.438L10.36,14.375,4.884,18.353l2.091-6.438L1.5,7.938H8.269Z" transform="translate(-0.937 -0.938)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"/>
         </g>
       </g>
@@ -495,5 +519,6 @@ export const Icons = {
   Topografia,
   Alquiler,
   Servicios,
-  Star
+  Star,
+  Publicidad
 };

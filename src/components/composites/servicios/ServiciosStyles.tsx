@@ -15,34 +15,32 @@ const ServiciosBase = (theme:Theme): Styles => ({
 });
 
 const ServiciosStructure = (theme: Theme): Styles => ({
-  '& .Servicios': {
+  '& h3':{
+    width:'100%',
+    textAlign:'center'
+  },
+  '& .servicios': {
     display: 'flex',
-    justifyContent: 'space-between',
     flexDirection:'row',
     [generateBreakpoint('max-width', theme.breakpoints.md)]: {
-        flexDirection:'column'
-    }
-  },
-  '& .Servicios div':{
-    display:'flex',
-    width:'50%',
-    [generateBreakpoint('max-width', theme.breakpoints.md)]: {
-        width: '100%',
+      width: '100%',
+      flexDirection:'column',
     }
   },
   '& .message':{
-    padding:'80px 0 0 160px'
+    padding:'80px 0',
+    width:'480px',
+    [generateBreakpoint('max-width', theme.breakpoints.md)]: {
+      width: '100%',
+    }
   },
-  '& h1':{
-    marginBottom:'60px'
+  '& .icons':{
+    display:'flex',
+    flexWrap:'wrap',
+    justifyContent:'space-around'
   },
-  '& .form':{
-    backgroundColor:theme.colors.white,
-    padding:'30px',
-    flexDirection:'column'
-  },
-  '& .form h3':{
-    marginBottom:'20px'
+  '& .icons > div':{
+    marginBottom:'30px'
   }
 });
 
@@ -52,7 +50,7 @@ const generateServiciosStyles = ({ theme }: ServiciosStylesProps) => ({
 });
 
 export const ServiciosStyles =
-  styled.header<ServiciosStylesProps>(generateServiciosStyles);
+  styled.section<ServiciosStylesProps>(generateServiciosStyles);
 
 
 
