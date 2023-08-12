@@ -15,6 +15,9 @@ const ServiciosBase = (theme:Theme): Styles => ({
 });
 
 const ServiciosStructure = (theme: Theme): Styles => ({
+  '& div':{
+    marginBottom:'30px'
+  },
   '& h3':{
     width:'100%',
     textAlign:'center'
@@ -32,12 +35,14 @@ const ServiciosStructure = (theme: Theme): Styles => ({
     width:'480px',
     [generateBreakpoint('max-width', theme.breakpoints.md)]: {
       width: '100%',
+      padding:0
     }
   },
   '& .icons':{
     display:'flex',
     flexWrap:'wrap',
-    justifyContent:'space-around'
+    justifyContent:'space-around',
+    width:'100%'
   },
   '& .icons > div':{
     marginBottom:'30px'
@@ -50,7 +55,7 @@ const generateServiciosStyles = ({ theme }: ServiciosStylesProps) => ({
 });
 
 export const ServiciosStyles =
-  styled.section<ServiciosStylesProps>(generateServiciosStyles);
+  styled.div<ServiciosStylesProps>(generateServiciosStyles);
 
 
 

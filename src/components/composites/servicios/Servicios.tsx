@@ -35,6 +35,21 @@ export const Servicios=()=>{
         },
 
     ]
+    const iconsComprador:CardIconProps[] = [
+        {
+            iconName:'EstudioFinanciero',
+            serviceName:'Estudio financiero de factibilidad económica.'
+        },
+        {
+            iconName:'Search',
+            serviceName:'Búsqueda de lote ideal para su proyecto.'
+        },
+        {
+            iconName:'TramitesBancarios',
+            serviceName:'Trámites para préstamos bancarios.'
+        }
+
+    ]
  
     return(
         <ServiciosStyles>
@@ -53,6 +68,27 @@ export const Servicios=()=>{
                         {/* <CardIcon iconName={'Correduria'} serviceName={"Correduría"} /> */}
                         {
                             icons.map((icon,index)=>{
+                                return(
+                                    <CardIcon key={index} iconName={icon.iconName} serviceName={icon.serviceName} />
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+                <div className="servicios">
+                    <div className='message'>
+                        <Typography
+                            tag='h3'
+                            variant="heading3"
+                            color={theme.colors.primary.main}
+                        >
+                            Servicios <br />al comprador
+                        </Typography>
+                    </div>
+                    <div className="icons">
+                        {/* <CardIcon iconName={'Correduria'} serviceName={"Correduría"} /> */}
+                        {
+                            iconsComprador.map((icon,index)=>{
                                 return(
                                     <CardIcon key={index} iconName={icon.iconName} serviceName={icon.serviceName} />
                                 )
