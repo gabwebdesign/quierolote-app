@@ -1,5 +1,6 @@
 import { Header } from '@/components/composites/Header/Header';
 import { Hero } from '@/components/composites/hero/Hero';
+import { Servicios } from '@/components/composites/servicios/Servicios';
 import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({
@@ -14,6 +15,7 @@ export default function Home() {
     <main className={roboto.className}>
       <Header />
       <Hero />
+      <Servicios />
       {/* <Hero>
         <Container maxWidth="xl">
           <div className="hero">
