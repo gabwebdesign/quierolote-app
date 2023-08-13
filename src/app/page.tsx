@@ -1,4 +1,5 @@
 import { Faq } from '@/components/composites/faq/faq';
+import { Footer } from '@/components/composites/footer/Footer';
 import { Header } from '@/components/composites/Header/Header';
 import { Hero } from '@/components/composites/hero/Hero';
 import { Servicios } from '@/components/composites/servicios/Servicios';
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <Servicios />
       <Faq />
+      <Footer />
       {/* <Hero>
         <Container maxWidth="xl">
           <div className="hero">
