@@ -24,6 +24,7 @@ const FooterStructure = (theme: Theme): Styles => ({
   },
   '& .footer-content div': {
     width:'50%',
+    marginBottom:'10px',
     [generateBreakpoint('max-width', theme.breakpoints.md)]: {
       width: '100%',
     }
