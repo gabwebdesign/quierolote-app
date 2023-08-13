@@ -386,13 +386,13 @@ const TramitesBancarios = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
         </clipPath>
       </defs>
       <g data-name="Grupo 49" transform="translate(0 0)">
-        <path data-name="Trazado 44" d="M50.484,22.722V42.69H9.326V22.722" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-        <line data-name="Línea 22" y2="19.968" transform="translate(36.833 22.722)" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-        <line data-name="Línea 23" y2="19.968" transform="translate(22.774 22.722)" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path data-name="Trazado 44" d="M50.484,22.722V42.69H9.326V22.722" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
+        <line data-name="Línea 22" y2="19.968" transform="translate(36.833 22.722)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
+        <line data-name="Línea 23" y2="19.968" transform="translate(22.774 22.722)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
         <g data-name="Grupo 48">
           <g data-name="Grupo 47" clipPath="url(#clip-path)">
-            <line data-name="Línea 24" x1="49.41" transform="translate(5.251 50.024)" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-            <path data-name="Trazado 45" d="M54.554,18.028H4.4a2.9,2.9,0,1,1,0-5.791L29.905,1.5,54.554,12.237a2.9,2.9,0,1,1,0,5.791Z" fill="none" stroke={fill} stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            <line data-name="Línea 24" x1="49.41" transform="translate(5.251 50.024)" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
+            <path data-name="Trazado 45" d="M54.554,18.028H4.4a2.9,2.9,0,1,1,0-5.791L29.905,1.5,54.554,12.237a2.9,2.9,0,1,1,0,5.791Z" fill="none" stroke={fill} strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"/>
           </g>
         </g>
       </g>

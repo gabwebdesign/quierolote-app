@@ -1,3 +1,4 @@
+import { Faq } from '@/components/composites/faq/faq';
 import { Header } from '@/components/composites/Header/Header';
 import { Hero } from '@/components/composites/hero/Hero';
 import { Servicios } from '@/components/composites/servicios/Servicios';
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Servicios />
+      <Faq />
       {/* <Hero>
         <Container maxWidth="xl">
           <div className="hero">
