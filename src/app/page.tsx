@@ -1,3 +1,4 @@
+import { Destacados } from '@/components/composites/destacados/Destacados';
 import { Faq } from '@/components/composites/faq/faq';
 import { Footer } from '@/components/composites/footer/Footer';
 import { Header } from '@/components/composites/Header/Header';
@@ -17,6 +18,7 @@ export default function Home() {
     <main className={roboto.className}>
       <Header />
       <Hero />
+      <Destacados />
       <Servicios />
       <Faq />
       <Footer />

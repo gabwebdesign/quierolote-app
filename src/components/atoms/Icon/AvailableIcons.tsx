@@ -377,6 +377,16 @@ const EstudioPrecios = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   );
 };
 
+const Location = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="28.5" height="28.5" viewBox="0 0 28.5 28.5"
+    fill={fill} {...rest}>
+      <path data-name="Trazado 1" d="M18.313,4A8.314,8.314,0,0,0,10,12.313c0,6.234,8.313,15.438,8.313,15.438s8.313-9.2,8.313-15.438A8.314,8.314,0,0,0,18.313,4Zm0,11.281a2.969,2.969,0,1,1,2.969-2.969A2.97,2.97,0,0,1,18.313,15.281Z" transform="translate(-4.062 -1.625)" fill={fill}/>
+      <path data-name="Trazado 2" d="M0,0H28.5V28.5H0Z" fill="none"/>
+    </svg>
+  );
+};
+
 const TramitesBancarios = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   return (
       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="58.95" height="51.524" viewBox="0 0 58.95 51.524"  fill={fill} {...rest}>
@@ -520,5 +530,6 @@ export const Icons = {
   Alquiler,
   Servicios,
   Star,
-  Publicidad
+  Publicidad,
+  Location
 };
