@@ -25,6 +25,6 @@ const getLoteById = async (req: NextRequest, params: Params) => {
   await db.connect();
   const lote = await Lotes.findById(id);
   await db.disconnect();
-  
+
   return NextResponseMessage({ status: HttpStatusCode.Ok, data: lote });
 };

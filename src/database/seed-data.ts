@@ -1,8 +1,10 @@
-import { Lote } from "@/types/lote";
+import { Lote } from '@/types/lote';
+import { User } from '@/types/user';
+import bcrypt from 'bcryptjs';
 
 interface SeedData {
   lotes: Lote[];
-  // users: IUser[];
+  users: User[];
 }
 
 export const initialData: SeedData = {
@@ -23,11 +25,19 @@ export const initialData: SeedData = {
       },
       // user: '63c1da1a3770933a1e1d27ff',
       // images: [
-       
+
       // ],
     },
   ],
-  // users: [
-  
-  // ],
+  users: [
+    {
+      name: 'Test Admin',
+      role: 'admin',
+      email: `test-admin@quierolote.com`,
+      password: bcrypt.hashSync('123456'),
+      phone: '888888888',
+      _id: '63c1da1a3770933a1e1d27ff',
+      picture: 'test picture',
+    },
+  ],
 };

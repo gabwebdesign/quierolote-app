@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db, seedData, Lotes } from '@/database';
+import { db, seedData, Lotes, Users } from '@/database';
 
 export async function GET(request: NextRequest) {
   if (process.env.NODE_ENV === 'production') {
@@ -14,6 +14,9 @@ export async function GET(request: NextRequest) {
 
     await Lotes.deleteMany();
     await Lotes.insertMany(seedData.initialData.lotes);
+
+    await Users.deleteMany();
+    await Users.insertMany(seedData.initialData.users);
 
     await db.disconnect();
 

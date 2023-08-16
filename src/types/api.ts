@@ -1,1 +1,0 @@
-export type HTTPCodes = 200 | 500 | 400 | 401 | 404;
