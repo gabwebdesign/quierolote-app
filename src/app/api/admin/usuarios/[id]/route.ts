@@ -31,7 +31,7 @@ const updateUsuarioById = async (req: NextRequest, params: Params) => {
   if (!id || !isValidObjectId(id))
     throw new ApiError(HttpStatusCode.BadRequest, 'Id invalido.');
 
-  const { role, picture, name, phone, password } = body;
+  const { role, name, phone, password } = body;
 
   if (password) {
     const res = await dbUsers.checkPasswordById(id, password);
@@ -52,23 +52,8 @@ const updateUsuarioById = async (req: NextRequest, params: Params) => {
     );
   }
 
-  //TODO UPDATE IMAGE
-  // if (picture !== user.picture) {
-  //   const imagePublicId = getImagePublicId(picture!);
-  //   const { result } = (await images.deleteImage(imagePublicId)) as {
-  //     result: string;
-  //   };
-  //   if (result !== 'ok') {
-  //     throw new ApiError(
-  //       HttpStatusCode.BadRequest,
-  //       'No se pudo eliminar la imagen.'
-  //     );
-  //   }
-  // }
-
   await user.updateOne({
     role,
-    picture,
     name,
     phone,
     ...(password && { password: await dbUsers.hashPassword(password) }),
@@ -97,21 +82,6 @@ const deleteUsuarioById = async (req: NextRequest, params?: Params) => {
       'Usuario con ese id no existe.'
     );
   }
-
-  //TODO REMOVE PICTURE
-  // if (user.picture?.includes('cloudinary')) {
-  //   const imagePublicId = getImagePublicId(user.picture);
-  //   const { result } = (await images.deleteImage(imagePublicId)) as {
-  //     result: string;
-  //   };
-  //   if (result !== 'ok') {
-  //     await db.disconnect();
-  //     throw new ApiError(
-  //       HttpStatusCode.BadRequest,
-  //       'No se pudo eliminar la imagen.'
-  //     );
-  //   }
-  // }
 
   await user.deleteOne();
   await db.disconnect();

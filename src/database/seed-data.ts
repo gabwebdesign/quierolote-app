@@ -23,10 +23,10 @@ export const initialData: SeedData = {
         distrito: 'San Rafael',
         direccion: 'Belén 320mts sur de la panasonic',
       },
-      // user: '63c1da1a3770933a1e1d27ff',
-      // images: [
-
-      // ],
+      user: '63c1da1a3770933a1e1d27ff',
+      images: [
+        'https://res.cloudinary.com/dmfe6lphh/image/upload/v1692240570/eyhdv2zc74txv8ozopzn.png',
+      ],
     },
   ],
   users: [
@@ -37,7 +37,6 @@ export const initialData: SeedData = {
       password: bcrypt.hashSync('123456'),
       phone: '888888888',
       _id: '63c1da1a3770933a1e1d27ff',
-      picture: 'test picture',
     },
   ],
 };

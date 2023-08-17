@@ -1,4 +1,5 @@
-import { Lotes, db } from '@/database';
+import { Lotes, db, dbCloudinary } from '@/database';
+import { getImagePublicId } from '@/utils/api/imagePublicId';
 import { NextResponseMessage } from '@/utils/api/responseMessage';
 import { withExceptionFilter } from '@/utils/error/filters';
 import { HttpStatusCode } from 'axios';
@@ -37,20 +38,6 @@ const updateLoteById = async (req: NextRequest, params: Params) => {
     throw new ApiError(HttpStatusCode.BadRequest, 'Lote con ese id no existe.');
   }
 
-  //TODO UPDATE IMAGES
-  // property.images.forEach(async (image) => {
-  //   const imagePublicId = getImagePublicId(image);
-  //   const { result } = (await images.deleteImage(imagePublicId)) as {
-  //     result: string;
-  //   };
-  //   if (result !== 'ok') {
-  //     throw new ApiError(
-  //       HttpStatusCode.BadRequest,
-  //       'No se pudo eliminar la imagen.'
-  //     );
-  //   }
-  // });
-
   await lote.updateOne(body);
   await db.disconnect();
 
@@ -74,19 +61,20 @@ const deleteLoteById = async (req: NextRequest, params?: Params) => {
     throw new ApiError(HttpStatusCode.BadRequest, 'Lote con ese id no existe.');
   }
 
-  //TODO DELETE IMAGES
-  // property.images.forEach(async (image) => {
-  //   const imagePublicId = getImagePublicId(image);
-  //   const { result } = (await images.deleteImage(imagePublicId)) as {
-  //     result: string;
-  //   };
-  //   if (result !== 'ok') {
-  //     throw new ApiError(
-  //       HttpStatusCode.BadRequest,
-  //       'No se pudo eliminar la imagen.'
-  //     );
-  //   }
-  // });
+  const publicIds = lote?.images?.map((image) => getImagePublicId(image));
+
+  if (Array.isArray(publicIds) && publicIds?.length > 0) {
+    const results = await Promise.all(publicIds.map(dbCloudinary.deleteImage));
+
+    const isAllWrong = results.every(({ result }) => result === 'not found');
+
+    if (isAllWrong) {
+      throw new ApiError(
+        HttpStatusCode.BadRequest,
+        'No se pudo eliminar las imagenes.'
+      );
+    }
+  }
 
   await lote.deleteOne();
   await db.disconnect();

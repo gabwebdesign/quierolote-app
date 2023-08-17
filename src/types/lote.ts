@@ -1,10 +1,12 @@
+import { User } from "./user";
+
 export interface Lote {
   _id?: string;
   titulo?: string;
   descripcion?: string;
   direccion?: LoteDireccion;
   detalles?: LoteDetalles;
-  // user?: IUser | string;
+  user?: User | string;
   images?: string[];
   estado?: LoteEstado;
 

@@ -3,11 +3,6 @@ import mongoose, { model, Model, Schema } from 'mongoose';
 
 const userSchema = new Schema(
   {
-    picture: {
-      type: String,
-      // default:
-      //   'https://res.cloudinary.com/dr4gvqla9/image/upload/v1675098218/pictures/user_xgdrsl.png',
-    },
     name: {
       type: String,
       required: {

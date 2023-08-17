@@ -98,20 +98,20 @@ const lotesSchema = new Schema(
       },
       tipoUsoSuelo: String,
     },
-    // user: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'User',
-    //   required: true,
-    // },
-    // images: {
-    //   type: [String],
-    //   validate: {
-    //     validator: function (values: string[]) {
-    //       return values.length <= 6 && values.length >= 3;
-    //     },
-    //     message: 'Las imagenes deben ser minimo 3 y maximo 6',
-    //   },
-    // },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+    images: {
+      type: [String],
+      validate: {
+        validator: function (values: string[]) {
+          return values.length <= 6 && values.length >= 1;
+        },
+        message: 'Las imagenes deben ser minimo 1 y maximo 6',
+      },
+    },
   },
   {
     timestamps: true,
