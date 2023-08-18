@@ -11,7 +11,17 @@ export const LoteInfo=()=>{
         <LoteInfoStyles>
             <Container maxWidth="xl">
                 <div className="LoteInfo">
-                    <div className='message'>
+                    <div className="detail-info">
+                        <Typography tag='h3' variant='heading3' color={theme.colors.purple}>
+                            ¿Quieres anunciar tu lote?
+                        </Typography>
+                        <Typography>
+                            Llena el siguiente formulario y nos pondremos en contacto con usted.
+                        </Typography>
+                        <Button>Subir Archivo</Button>
+                        <Button>Enviar Información</Button>
+                    </div>
+                    <div className='aside'>
                         <Typography
                             tag='h1'
                             variant="heading1"
@@ -21,18 +31,6 @@ export const LoteInfo=()=>{
                             Asesoría para<br /> lograr sus metas.
                         </Typography>
                         <Button>Más Información</Button>
-                    </div>
-                    <div
-                        className="form"
-                    >
-                        <Typography tag='h3' variant='heading3' color={theme.colors.purple}>
-                            ¿Quieres anunciar tu lote?
-                        </Typography>
-                        <Typography>
-                            Llena el siguiente formulario y nos pondremos en contacto con usted.
-                        </Typography>
-                        <Button>Subir Archivo</Button>
-                        <Button>Enviar Información</Button>
                     </div>
                 </div>
             </Container>

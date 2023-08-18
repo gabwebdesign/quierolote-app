@@ -14,7 +14,7 @@ const CardLoteBase = (): Styles => ({
   boxShadow: '2px 2px 5px 1px rgba(0,0,0,.18)'
 });
 
-const CardLoteElements = ( theme:Theme ): Styles => ({
+const CardLoteElements = ( ): Styles => ({
     '& .ideal':{
         marginBottom: '29px',
         display:'flex',

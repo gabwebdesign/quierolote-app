@@ -10,7 +10,7 @@ const roboto = Roboto({
   weight: ['400', '700'],
   style: ['normal'],
   subsets: ['latin'],
-  display: 'swap',
+  display: 'swap', 
 });
 
 export default function Home() {
