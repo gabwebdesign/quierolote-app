@@ -5,14 +5,24 @@ import { Typography } from '@/components/atoms/Typography/Typography';
 import { useTheme } from '@emotion/react';
 import { LoteCardIconStyles } from './LoteCardIconStyles';
 
-export const LoteCardIcon = () => {
+export interface LoteIconProps {
+    iconName:any;
+    feature: string;
+    data:string;
+}
+
+export const LoteCardIcon = ({
+    iconName,
+    feature,
+    data
+}:LoteIconProps) => {
   const theme = useTheme();
   return (
     <LoteCardIconStyles>
-      <Icon name={'Mide'} width={'22px'} height={'22px'} />
+      <Icon name={iconName} width={'22px'} height={'22px'} />
       <div className='feature'>
-            <Typography>Mide</Typography>
-            <Typography>6000 m2</Typography>
+            <Typography>{feature}</Typography>
+            <Typography>{data} m<sup>2</sup></Typography>
       </div>
     </LoteCardIconStyles>
   );

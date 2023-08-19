@@ -12,7 +12,7 @@ export const Header = () => {
       <Container maxWidth="xl" tag="div">
         <nav>
           <div id="nav-brand">
-            <Icon name="Logo" width={190} height={40} />
+            <Icon name="Logo" width={190} height={40} fill={theme.colors.primary.main} />
           </div>
           <div
             id="menu"

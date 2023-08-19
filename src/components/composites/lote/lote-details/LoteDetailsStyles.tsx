@@ -10,7 +10,8 @@ interface LoteDetailsStylesProps {
 const LoteDetailsBase = (): Styles => ({
         width:'100%',
         display: 'flex',
-        padding:'20px 0'
+        padding:'20px 0',
+        flexDirection:'column'
 });
 
 const LoteDetailsStructure = (theme: Theme): Styles => ({
@@ -26,6 +27,14 @@ const LoteDetailsStructure = (theme: Theme): Styles => ({
             gridColumn: '2/5',
         },
     },
+    '& .details':{
+        display: 'grid',
+        gap:'10px',
+        gridTemplateColumns:'repeat(2,1fr)',
+        [generateBreakpoint('min-width', theme.breakpoints.md)]: {
+            gridTemplateColumns:'repeat(4,1fr)',
+        },
+    }
 });
 
 const generateLoteDetailsStyles = ({ theme }: LoteDetailsStylesProps) => ({

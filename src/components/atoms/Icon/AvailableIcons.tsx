@@ -260,8 +260,6 @@ const Diseño = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
       <svg 
       xmlns="http://www.w3.org/2000/svg" 
       xmlnsXlink="http://www.w3.org/1999/xlink" 
-      width="52.007" 
-      height="51.516" 
       viewBox="0 0 52.007 51.516"
       fill={fill}
       {...rest}
@@ -317,7 +315,7 @@ const TramitesMunicipales = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
         fill={fill} {...rest}>
         <defs>
           <clipPath>
-            <rect data-name="Rectángulo 71" width="58.95" height="51.524" transform="translate(0 0)" fill="none"/>
+            <rect data-name="Rectángulo 71" transform="translate(0 0)" fill="none"/>
           </clipPath>
         </defs>
         <g data-name="Grupo 35" transform="translate(0 0)">
@@ -336,11 +334,11 @@ const TramitesMunicipales = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
 
 const EstudioFinanciero = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   return (
-      <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="57.82" height="51.475" viewBox="0 0 57.82 51.475"
+      <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 57.82 51.475"
         fill={fill} {...rest}>
         <defs>
           <clipPath>
-            <rect data-name="Rectángulo 75" width="57.82" height="51.475" transform="translate(0 0)" fill="none"/>
+            <rect data-name="Rectángulo 75" transform="translate(0 0)" fill="none"/>
           </clipPath>
         </defs>
         <g data-name="Grupo 44" transform="translate(0 0)">
@@ -357,12 +355,12 @@ const EstudioFinanciero = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
 
 const EstudioPrecios = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   return (
-        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="54.211" height="49.262" viewBox="0 0 54.211 49.262"
+        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 54.211 49.262"
           fill={fill} {...rest}
           >
           <defs>
             <clipPath>
-              <rect data-name="Rectángulo 72" width="54.211" height="49.262" transform="translate(0 0)" fill="none"/>
+              <rect data-name="Rectángulo 72" transform="translate(0 0)" fill="none"/>
             </clipPath>
           </defs>
           <g data-name="Grupo 37" transform="translate(0 0)">
@@ -389,10 +387,10 @@ const Location = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
 
 const TramitesBancarios = ({ fill, ...rest }: SVGProps<SVGSVGElement>) => {
   return (
-      <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="58.95" height="51.524" viewBox="0 0 58.95 51.524"  fill={fill} {...rest}>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 58.95 51.524"  fill={fill} {...rest}>
       <defs>
         <clipPath id="clipPath">
-          <rect data-name="Rectángulo 77" width="58.95" height="51.524" transform="translate(0 0)" fill="none"/>
+          <rect data-name="Rectángulo 77" transform="translate(0 0)" fill="none"/>
         </clipPath>
       </defs>
       <g data-name="Grupo 49" transform="translate(0 0)">
