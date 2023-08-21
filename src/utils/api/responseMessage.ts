@@ -1,13 +1,18 @@
 import { HttpStatusCode } from 'axios';
-import { NextResponse } from "next/server";
-import { ResponseBody } from '../error/filters';
+import { NextResponse } from 'next/server';
 
-interface ResponseMessage<T> {
-  message?: string | unknown;
+export interface ResponseMessage<T> {
   data?: T;
   status?: HttpStatusCode;
+  timestamp?: string;
+  url?: string;
+  message?: string | unknown;
+  stack?: string;
 }
 
-export const NextResponseMessage = <T>(props: ResponseMessage<T> | ResponseBody) => {
-  return NextResponse.json({...props});
-}
+export const NextResponseMessage = <T>(props: ResponseMessage<T>) => {
+  return new NextResponse(JSON.stringify({ ...props }), {
+    status: props.status,
+    headers: { 'content-type': 'application/json' },
+  });
+};
