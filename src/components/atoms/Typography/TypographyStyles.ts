@@ -9,7 +9,6 @@ interface TypographyStylesProps extends TypographyProps {
 }
 
 const TypographyBasic = (theme: Theme): Styles => ({
-  fontFamily: theme.fontFamily.roboto,
   lineHeight: 1.2,
 });
 
