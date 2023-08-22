@@ -11,7 +11,7 @@ export async function middleware(req: NextRequest) {
 
   if (!session) {
     // return NextResponse.rewrite(new URL('/auth', req.url));
-    if(req.url.includes('api')) {
+    if(req.url.includes('admin')) {
       return NextResponseMessage({ status: HttpStatusCode.Unauthorized, message: 'No tienes acceso a este recurso.' });
     }
   }
