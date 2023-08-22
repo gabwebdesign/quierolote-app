@@ -1,18 +1,21 @@
-import { getToken } from 'next-auth/jwt';
-import { NextRequest } from 'next/server';
+import { JWT, getToken } from 'next-auth/jwt';
+import { NextRequest, NextResponse } from 'next/server';
 import { NextResponseMessage } from './utils/api/responseMessage';
 import { HttpStatusCode } from 'axios';
 
 export async function middleware(req: NextRequest) {
-  const session: any = await getToken({
+  const session = await getToken({
     req,
     secret: process.env.NEXTAUTH_SECRET,
   });
 
   if (!session) {
-    // return NextResponse.rewrite(new URL('/auth', req.url));
-    if(req.url.includes('admin')) {
+    if(req.url.includes('/api/admin')) {
       return NextResponseMessage({ status: HttpStatusCode.Unauthorized, message: 'No tienes acceso a este recurso.' });
+    }
+
+    if(req.url.includes('/admin')) {
+      return NextResponse.rewrite(new URL('/auth', req.url));
     }
   }
 

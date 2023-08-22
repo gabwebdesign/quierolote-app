@@ -22,9 +22,11 @@ const handler = NextAuth({
     signIn: '/auth',
   },
   session: {
-    maxAge: 2592000, //30d
+    maxAge: 60 * 60 * 24, //1 day
     strategy: 'jwt',
-    updateAge: 86400, //cada dia
+  },
+  jwt: {
+    maxAge: 60 * 60 * 24, //1 day
   },
   callbacks: {
     async jwt({ token, account, user }) {
