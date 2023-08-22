@@ -1,14 +1,3 @@
-
-// .hero{
-//     width: 100%;
-//     background: #6A1A75;
-//     display: flex;
-// }
-
-// .hero div{
-//     width: 50%;
-// }
-
 import { Styles } from '@/types/common';
 import { generateBreakpoint } from '@/utils/css/utilities';
 import { Theme } from '@emotion/react';
