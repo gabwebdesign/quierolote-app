@@ -11,6 +11,7 @@ import {
 } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { Typography } from '@/components/atoms/Typography/Typography';
+import { FormInputStyles } from './FormInputStyles';
 
 interface FormInputProps<T extends FieldValues>
   extends InputProps,
@@ -30,7 +31,7 @@ export const FormInput = <T extends FieldValues>({
   ...rest
 }: FormInputProps<T>) => {
   return (
-    <div className={className}>
+    <FormInputStyles className={className}>
       <Input name={name} {...rest} {...(register && register(name, rules))} />
       <ErrorMessage
         errors={errors}
@@ -40,6 +41,6 @@ export const FormInput = <T extends FieldValues>({
           <Typography variant="small" color="#FF0000">{message}</Typography>
         )}
       />
-    </div>
+    </FormInputStyles>
   );
 };

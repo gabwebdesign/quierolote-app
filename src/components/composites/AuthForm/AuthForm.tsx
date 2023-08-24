@@ -4,6 +4,7 @@ import { Button } from '@/components/atoms/Button/Button';
 import { useForm } from 'react-hook-form';
 import { FormInput } from '../FormInput/FormInput';
 import { isEmail } from '@/utils/validations/email';
+import { AuthFormStyles } from './AuthFormStyles';
 
 type AuthForm = {
   email: string;
@@ -22,7 +23,7 @@ export const AuthForm = () => {
   });
 
   return (
-    <form onSubmit={onSubmit}>
+    <AuthFormStyles onSubmit={onSubmit}>
       <FormInput
         id="email"
         type="text"
@@ -46,6 +47,6 @@ export const AuthForm = () => {
       <Button variant="contained" color="primary">
         Log In
       </Button>
-    </form>
+    </AuthFormStyles>
   );
 };
