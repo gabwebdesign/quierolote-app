@@ -5,10 +5,12 @@ import { useForm } from 'react-hook-form';
 import { FormInput } from '../FormInput/FormInput';
 import { isEmail } from '@/utils/validations/email';
 import { AuthFormStyles } from './AuthFormStyles';
+import { FormSelect } from '../FormSelect/FormSelect';
 
 type AuthForm = {
   email: string;
   password: string;
+  select: string;
 };
 
 export const AuthForm = () => {
@@ -19,6 +21,7 @@ export const AuthForm = () => {
   } = useForm<AuthForm>();
 
   const onSubmit = handleSubmit((data) => {
+    console.log({data})
     console.log('submitting...');
   });
 
@@ -36,12 +39,21 @@ export const AuthForm = () => {
       />
       <FormInput
         id="password"
-        type="text"
+        type="password"
         name="password"
         label="Contrasena"
         placeholder="Contraseña*"
         register={register}
         rules={{ required: 'Contraseña es requerido.' }}
+        errors={errors}
+      />
+      <FormSelect
+        id="select"
+        name="select"
+        label="select"
+        register={register}
+        defaultValue="Select*"
+        options={[{name: 'Option 1', value: '1'}, {name: 'Option 2', value: '2'}]}
         errors={errors}
       />
       <Button variant="contained" color="primary">

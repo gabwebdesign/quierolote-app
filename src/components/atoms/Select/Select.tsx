@@ -5,10 +5,27 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   id?: string;
   name?: string;
   label?: string;
+  options: Option[];
 }
 
-const SelectFC = (props: SelectProps, ref?: ForwardedRef<HTMLSelectElement>) => {
-  return <SelectStyles {...props} ref={ref} />;
+type Option = {
+  name: string;
+  value: string;
+};
+
+const SelectFC = (
+  { options, ...rest }: SelectProps,
+  ref?: ForwardedRef<HTMLSelectElement>
+) => {
+  return (
+    <SelectStyles {...rest} ref={ref}>
+      {options.map(({ name, value }, index) => (
+        <option key={`option-${name}-${index}`} value={value}>
+          {name}
+        </option>
+      ))}
+    </SelectStyles>
+  );
 };
 
 export const Select = forwardRef(SelectFC);
