@@ -1,3 +1,5 @@
+import { Header } from '@/components/composites/Header/Header';
+import { Footer } from '@/components/composites/footer/Footer';
 import { GeneralThemeProvider } from '@/context/themeContext/GeneralThemeProvider';
 
 export const metadata = {
@@ -13,7 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <GeneralThemeProvider>{children}</GeneralThemeProvider>
+        <GeneralThemeProvider>
+          <Header />
+          {children}
+          <Footer />
+        </GeneralThemeProvider>
       </body>
     </html>
   );
