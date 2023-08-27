@@ -11,7 +11,8 @@ const CardLoteBase = (): Styles => ({
   padding: '30px',
   width:'320px',
   minHeight:'405px',
-  boxShadow: '2px 2px 5px 1px rgba(0,0,0,.18)'
+  boxShadow: '2px 2px 5px 1px rgba(0,0,0,.18)',
+  marginBottom:'50px'
 });
 
 const CardLoteElements = ( ): Styles => ({
