@@ -18,7 +18,7 @@ export default async function LotsAdmin() {
         href={`/admin/lots/new`}
         tag="a"
       >
-        Crear Propiedad
+        Crear Lote
       </Button>
       <LotDatagrid lots={data} />
     </Container>
