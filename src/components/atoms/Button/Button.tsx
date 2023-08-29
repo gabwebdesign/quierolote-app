@@ -42,7 +42,7 @@ export const Button = ({
 
   return (
     <ButtonComponent
-      onClick={handleOnClick}
+      onClick={onClick ? handleOnClick : undefined}
       variant={variant}
       color={color}
       {...rest}

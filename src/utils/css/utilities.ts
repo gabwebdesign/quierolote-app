@@ -13,3 +13,5 @@ export const generateBreakpoint = (
 
   return `@media (${definition}: ${bp}px)`;
 };
+
+export const capitalize = (str: string): string => `${str.charAt(0).toUpperCase()}${str.slice(1)}`

@@ -5,12 +5,11 @@ import { useForm } from 'react-hook-form';
 import { FormInput } from '../FormInput/FormInput';
 import { isEmail } from '@/utils/validations/email';
 import { AuthFormStyles } from './AuthFormStyles';
-import { FormSelect } from '../FormSelect/FormSelect';
+import { signIn } from 'next-auth/react';
 
-type AuthForm = {
+type AuthFormProps = {
   email: string;
   password: string;
-  select: string;
 };
 
 export const AuthForm = () => {
@@ -18,15 +17,22 @@ export const AuthForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<AuthForm>();
+  } = useForm<AuthFormProps>();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log({data})
-    console.log('submitting...');
-  });
+  const onSubmit = async ({ email, password }: AuthFormProps) => {
+    try {
+      await signIn('credentials', {
+        email,
+        password,
+        callbackUrl: '/admin/lots'
+      });
+    } catch (error) {
+      console.log({ error });
+    }
+  };
 
   return (
-    <AuthFormStyles onSubmit={onSubmit}>
+    <AuthFormStyles onSubmit={handleSubmit(onSubmit)}>
       <FormInput
         id="email"
         type="text"
@@ -45,15 +51,6 @@ export const AuthForm = () => {
         placeholder="Contraseña*"
         register={register}
         rules={{ required: 'Contraseña es requerido.' }}
-        errors={errors}
-      />
-      <FormSelect
-        id="select"
-        name="select"
-        label="select"
-        register={register}
-        defaultValue="Select*"
-        options={[{name: 'Option 1', value: '1'}, {name: 'Option 2', value: '2'}]}
         errors={errors}
       />
       <Button variant="contained" color="primary">
