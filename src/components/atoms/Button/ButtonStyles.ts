@@ -50,6 +50,11 @@ const ButtonOutlined = (): Styles => ({
   borderWidth: 3,
 });
 
+const ButtonDisabled = (): Styles => ({
+  opacity: '0.4',
+  cursor: 'auto',
+});
+
 const getButtonColor = (
   color: ButtonStylesProps['color'],
   theme: Theme
@@ -61,7 +66,12 @@ const getButtonColor = (
   return colors[color || 'primary'];
 };
 
-const getButtonStyles = ({ theme, variant, color }: ButtonStylesProps) => {
+const getButtonStyles = ({
+  theme,
+  variant,
+  color,
+  disabled,
+}: ButtonStylesProps) => {
   const textBorderColor = getButtonColor(color, theme!);
 
   return {
@@ -82,6 +92,7 @@ const getButtonStyles = ({ theme, variant, color }: ButtonStylesProps) => {
       ...ButtonText(),
       color: textBorderColor,
     }),
+    ...(disabled && ButtonDisabled()),
   };
 };
 
