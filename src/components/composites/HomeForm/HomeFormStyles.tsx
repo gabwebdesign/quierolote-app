@@ -7,19 +7,41 @@ interface HomeFormStylesProps {
   theme?: Theme;
 }
 
-const HomeFormBasic = (theme: Theme): Styles => ({
-  width: '375px',
-  padding: '20px',
-  boxShadow: '0px 0px 10px rgba(0,0,0, 0.1)',
+const HomeFormBasic = (): Styles => ({
   display: 'flex',
   flexDirection: 'column',
   gap: '20px',
-  borderRadius: '8px',
-  margin: '50px auto',
+  marginTop: '20px',
+});
+
+const HomeFormElements = (): Styles => ({
+    '& .form-wrapper':{
+        width:'100% !important'
+    },
+    '& .form-container':{
+        display: 'flex',
+        width:'100% !important',
+        flexDirection: 'row',
+        gap: '20px',
+        marginTop: '20px',
+    },
+
+    '& .colum-form':{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
+        marginTop: '20px',
+        width:'100%'
+    },
+    '& .colum-form div':{
+        width:'100% !important'
+    }
+    
 });
 
 const getHomeFormStyles = ({ theme }: HomeFormStylesProps) => ({
-  ...HomeFormBasic(theme!),
+  ...HomeFormBasic(),
+  ...HomeFormElements()
 });
 
 export const HomeFormStyles =
