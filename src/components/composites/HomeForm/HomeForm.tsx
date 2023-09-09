@@ -4,15 +4,18 @@ import { Button } from '@/components/atoms/Button/Button';
 import { useForm } from 'react-hook-form';
 import { FormInput } from '../FormInput/FormInput';
 import { isEmail } from '@/utils/validations/email';
-import { AuthFormStyles } from './AuthFormStyles';
 import { FormSelect } from '../FormSelect/FormSelect';
+import { HomeFormStyles } from './HomeFormStyles';
 
 type HomeForm = {
-  email: string;
-  password: string;
-  select: string;
-  text:string;
-  number:number;
+    name:string;
+    email: string;
+    phone: string;
+    provincia: string;
+    text:string;
+    ventaAlquiler:string;
+    dimensions:string;
+    price:string;
 };
 
 export const HomeForm = () => {
@@ -28,7 +31,7 @@ export const HomeForm = () => {
   });
 
   return (
-    <AuthFormStyles onSubmit={onSubmit}>
+    <HomeFormStyles onSubmit={onSubmit}>
 
     <FormInput
         id="name"
@@ -52,29 +55,26 @@ export const HomeForm = () => {
         errors={errors}
     />
 
-    <FormInput
-        id="phone"
-        type="tel"
-        name="number"
-        label="phone"
-        placeholder="Phone*"
-        register={register}
-        rules={{ required: 'Su teléfono es requerido.' }}
-        errors={errors}
-    />
-
       <FormSelect
         id="select"
-        name="select"
+        name="email"
         label="select"
         register={register}
-        defaultValue="Select*"
-        options={[{name: 'Option 1', value: '1'}, {name: 'Option 2', value: '2'}]}
+        defaultValue='San José'
+        options={[
+            {name: 'San José', value: '0'}, 
+            {name: 'Alajuela', value: '1'},
+            {name: 'Heredia', value: '2'},
+            {name: 'Cartago', value: '3'},
+            {name: 'Guanacaste', value: '4'},
+            {name: 'Limón', value: '5'},
+            {name: 'Puntarenas', value: '6'},
+        ]}
         errors={errors}
       />
       <Button variant="contained" color="primary">
-        Log In
+        Enviar Formulario
       </Button>
-    </AuthFormStyles>
+    </HomeFormStyles>
   );
 };

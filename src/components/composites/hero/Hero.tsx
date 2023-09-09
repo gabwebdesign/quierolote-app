@@ -4,6 +4,7 @@ import { Container } from '@/components/atoms/Container/Container';
 import { Icon } from '@/components/atoms/Icon/Icon';
 import { Typography } from '@/components/atoms/Typography/Typography';
 import { useTheme } from '@emotion/react';
+import { HomeForm } from '../HomeForm/HomeForm';
 import { HeroStyles } from './HeroStyles';
 
 export const Hero=()=>{
@@ -32,8 +33,7 @@ export const Hero=()=>{
                         <Typography>
                             Llena el siguiente formulario y nos pondremos en contacto con usted.
                         </Typography>
-                        <Button>Subir Archivo</Button>
-                        <Button>Enviar Información</Button>
+                        <HomeForm />
                     </div>
                 </div>
             </Container>
