@@ -31,12 +31,14 @@ export const HomeForm = () => {
   });
 
   return (
-    <HomeFormStyles onSubmit={onSubmit}>
+    <HomeFormStyles onSubmit={onSubmit} action="mailto:gab.webdesign@gmail.com">
 
     <div className='form-wrapper'>
         <div className='form-container'>
             <div className='colum-form'>
-                <FormInput
+
+                <input type="text" name="text" placeholder="Nombre*" required />
+                {/* <FormInput
                     id="name"
                     type="text"
                     name="text"
@@ -45,9 +47,11 @@ export const HomeForm = () => {
                     register={register}
                     rules={{ required: 'Su Nombre es requerido.'}}
                     errors={errors}
-                />
+                /> */}
+
                 
-                <FormInput
+                <input type="email" id="email" placeholder='E-mail*' required />
+                {/* <FormInput
                     id="email"
                     type="text"
                     name="email"
@@ -56,11 +60,20 @@ export const HomeForm = () => {
                     register={register}
                     rules={{ required: 'Email es requerido.', validate: isEmail }}
                     errors={errors}
-                />
+                /> */}
 
-                <FormSelect
-                    id="select"
-                    name="email"
+                <select name="provincia" required >
+                    <option>San José</option>
+                    <option>Alajuela</option>
+                    <option>Heredia</option>
+                    <option>Cartago</option>
+                    <option>Guanacaste</option>
+                    <option>Limón</option>
+                    <option>Puntarenas</option>
+                </select>
+                {/* <FormSelect
+                    id="provincia"
+                    name="provincia"
                     label="select"
                     register={register}
                     defaultValue='San José'
@@ -74,9 +87,11 @@ export const HomeForm = () => {
                         {name: 'Puntarenas', value: '6'},
                     ]}
                 errors={errors}
-                />
+                /> */}
 
-                <FormInput
+                <input type="text" name="dimensiones" placeholder='Dimensiones del Lote en m2*' required />
+
+                {/* <FormInput
                     id="dimensions"
                     type="text"
                     name="text"
@@ -85,13 +100,14 @@ export const HomeForm = () => {
                     register={register}
                     rules={{ required: 'Dimensiones requeridas.' }}
                     errors={errors}
-                />
+                /> */}
 
             </div>
 
             <div className='colum-form'>
 
-            <FormInput
+            <input type="tel" name="telefono" placeholder='Teléfono*' required />
+            {/* <FormInput
                 id="phone"
                 type="tel"
                 name="text"
@@ -100,9 +116,14 @@ export const HomeForm = () => {
                 register={register}
                 rules={{ required: 'Teléfono requerido.' }}
                 errors={errors}
-            />
+            /> */}
 
-            <FormSelect
+                <select name="venta-alquiler" required >
+                    <option>En Venta</option>
+                    <option>En Alquiler</option>
+                </select>
+
+            {/* <FormSelect
                 id="venta-alquiler"
                 name="email"
                 label="venta-alquiler"
@@ -113,19 +134,22 @@ export const HomeForm = () => {
                     {name: 'En Venta', value: 'venta'}, 
                     {name: 'En Alquiler', value: 'alquiler'}
                 ]}
+                rules={{ required: 'Campo Requerido.' }}
                 errors={errors}
-            />
+            /> */}
 
-            <FormInput
+            <input type="text" name="precio" placeholder='Precio*' required />
+
+            {/* <FormInput
                 id="price"
                 type="text"
                 name="text"
                 label="Precio"
                 placeholder="Precio*"
                 register={register}
-                rules={{ required: 'Precio requerido.' }}
+                rules={{ required: 'Campo Requerido.' }}
                 errors={errors}
-            />
+            /> */}
 
             <Button variant="outlined" color="primary">
                 Subir Archivo +

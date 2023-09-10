@@ -1,4 +1,5 @@
 'use client';
+import { Button } from '@/components/atoms/Button/Button';
 import { Container } from '@/components/atoms/Container/Container';
 import { Icon } from '@/components/atoms/Icon/Icon';
 import { Typography } from '@/components/atoms/Typography/Typography';
@@ -18,9 +19,9 @@ export const Header = () => {
             id="menu"
             style={{ display: 'flex', justifyContent: 'flex-end' }}
           >
-            <Typography color={theme.colors.primary.main}>
+            <a href='/#servicios'>
               Nuestros Servicios
-            </Typography>
+            </a>
           </div>
         </nav>
       </Container>

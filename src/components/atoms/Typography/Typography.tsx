@@ -11,6 +11,7 @@ export interface TypographyProps
   children?: ReactNode;
   fontWeight?: FontWeight;
   textTransform?: TextTransform;
+  align?:Align;
   textSize?: FontSize;
   gutterBottom?: string;
   color?: string;
@@ -20,6 +21,7 @@ export interface TypographyProps
 type Tag = 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'small';
 type FontWeight = keyof typeof theme.fontWeight;
 type TextTransform = 'uppercase' | 'lowercase' | 'capitalize';
+type Align = 'left' | 'right' | 'center' | 'justify';
 type FontSize = keyof typeof theme.fontSizes;
 type TextVariant =
   | 'paragraph'

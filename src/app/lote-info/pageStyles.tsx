@@ -39,7 +39,14 @@ const PageElements = (theme: Theme): Styles => ({
         flexDirection:'column',
         alignItems:'center',
         gap:'30px'
-    }
+    },
+    '& .contact-form-container':{
+      marginTop:'40px',
+      padding:'20px',
+      display:'flex',
+      flexDirection:'column',
+      gap:'20px'
+    },
   });
 
 

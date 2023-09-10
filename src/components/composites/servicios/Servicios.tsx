@@ -52,7 +52,7 @@ export const Servicios=()=>{
     ]
  
     return(
-        <ServiciosStyles>
+        <ServiciosStyles id='servicios'>
             <Container maxWidth="xl">
                 <div className="servicios">
                     <div className='message'>

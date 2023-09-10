@@ -24,8 +24,8 @@ export const AgentCard = ({
         <AgentCardStyles>
             <img src={pathImg} />
             <Typography fontWeight='bold'>{agentName}</Typography>
-            <Button tag='a' href={`tel:${phone}`}>LLAMAR A {agentName}</Button>
-            <Button tag='a' href={`mailto:${email}`}>CONTACTAR POR EMAIL</Button>
+            <Button tag='a' variant='contained' href={`tel:${phone}`}>LLAMAR A {agentName}</Button>
+            <Button tag='a' variant='outlined' href={`mailto:${email}`}>CONTACTAR POR EMAIL</Button>
         </AgentCardStyles>
   );
 };
