@@ -6,6 +6,7 @@ import { Typography } from '@/components/atoms/Typography/Typography';
 import { useTheme } from '@emotion/react';
 import { HomeForm } from '../HomeForm/HomeForm';
 import { HeroStyles } from './HeroStyles';
+import { FilterForm } from '../FilterForm/FilterForm';
 
 export const Hero=()=>{
     const theme = useTheme();
@@ -17,12 +18,11 @@ export const Hero=()=>{
                         <Typography
                             tag='h1'
                             variant="heading1"
-                            textTransform="uppercase"
                             color={theme.colors.white}
                         >
-                            Asesoría para<br /> lograr sus metas.
+                            
+                            Expertos Inmobiliarios,<br /> Expertos en Lotes.
                         </Typography>
-                        <Button>Más Información</Button>
                     </div>
                     <div
                         className="form"
@@ -36,6 +36,11 @@ export const Hero=()=>{
                         <HomeForm />
                     </div>
                 </div>
+
+                <div className='filter-form'>
+                    <FilterForm />
+                </div>
+
             </Container>
         </HeroStyles>
     )

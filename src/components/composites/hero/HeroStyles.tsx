@@ -46,6 +46,11 @@ const HeroStructure = (theme: Theme): Styles => ({
   },
   '& .form h3':{
     marginBottom:'20px'
+  },
+  '& .filter-form':{
+    padding:'20px 0',
+    borderRadius:'20px 0 0 0',
+    backgroundColor:theme.colors.white,
   }
 });
 
