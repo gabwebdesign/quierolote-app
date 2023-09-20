@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { FormInput } from '../FormInput/FormInput';
 import { isEmail } from '@/utils/validations/email';
 import { AuthFormStyles } from './AuthFormStyles';
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 
 type AuthFormProps = {
   email: string;

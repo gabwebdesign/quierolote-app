@@ -8,10 +8,16 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: InputType;
 }
 
-type InputType = 'text' | 'email' | 'password';
+type InputType = 'text' | 'email' | 'password' | 'checkbox' | 'file';
 
 const InputFC = (props: InputProps, ref?: ForwardedRef<HTMLInputElement>) => {
-  return <InputStyles {...props} ref={ref} />;
+  return (
+    <InputStyles type={props.type}>
+      <label htmlFor={props.id} className='label'>
+        {props.label} <input {...props} ref={ref} />
+      </label>
+    </InputStyles>
+  );
 };
 
 export const Input = forwardRef(InputFC);
