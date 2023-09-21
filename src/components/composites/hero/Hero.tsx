@@ -36,11 +36,6 @@ export const Hero=()=>{
                         <HomeForm />
                     </div>
                 </div>
-
-                <div className='filter-form'>
-                    <FilterForm />
-                </div>
-
             </Container>
         </HeroStyles>
     )

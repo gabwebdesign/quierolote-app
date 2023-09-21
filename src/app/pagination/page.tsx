@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CardLote, CardLoteProps } from '@/components/composites/card-lote/CardLote';
 import { PaginationComp } from '@/components/composites/paginationComp/PaginationComp';
+import { FilterForm } from '@/components/composites/FilterForm/FilterForm';
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -61,6 +62,9 @@ export default function LoteInfo() {
   console.log(lotes)
   return (
     <main className={roboto.className}>
+        <Container maxWidth='xl'>
+            <FilterForm />
+        </Container>
         <Container maxWidth="xl" 
             style={{ 
                 display: 'flex', 
