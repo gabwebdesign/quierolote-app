@@ -7,16 +7,15 @@ import { HTMLAttributes, ReactNode } from 'react';
 
 export interface CardLoteProps
   extends HTMLAttributes<HTMLElement> {
-  ideal:string;
-  shortDresciption:string;
-  mide:string;
-  price:string;
-  location:string;
-  pathImg:string;
+  shortDresciption?:string;
+  mide?:string;
+  price?:string;
+  location?:string;
+  pathImg?:string;
 }
 
 export const CardLote = ({
-    ideal,
+
     shortDresciption,
     mide,
     price,
@@ -26,10 +25,6 @@ export const CardLote = ({
   const theme = useTheme();
   return (
     <CardLoteStyles>
-        <div className='ideal'>
-            <Icon name='Star' width={12} height={12} />
-            <Typography>Ideal para {ideal}</Typography>
-        </div>
         <Typography fontWeight='bold'>
              {shortDresciption}
         </Typography>
