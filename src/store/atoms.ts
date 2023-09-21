@@ -11,3 +11,4 @@ export const updateLotAtom = atom(
 export const stepValidAtom = atom<boolean>(true);
 
 export const lotsDestacados = atom<Lote[] | null>(null);
+export const lotsAtom = atom<Lote[] | null>(null);

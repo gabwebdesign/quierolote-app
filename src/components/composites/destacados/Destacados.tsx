@@ -26,6 +26,7 @@ export const Destacados = () => {
                     (lote.direccion?.provincia, lote.direccion?.canton)
                   }`}
                   pathImg={lote.images![0]}
+                  id={lote._id}
                 />
               );
             })}
