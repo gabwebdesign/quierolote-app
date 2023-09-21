@@ -8,12 +8,12 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: InputType;
 }
 
-type InputType = 'text' | 'email' | 'password' | 'checkbox' | 'file';
+type InputType = 'text' | 'email' | 'password' | 'checkbox' | 'file' | 'tel';
 
 const InputFC = (props: InputProps, ref?: ForwardedRef<HTMLInputElement>) => {
   return (
     <InputStyles type={props.type}>
-      <label htmlFor={props.id} className='label'>
+      <label htmlFor={props.id} className="label">
         {props.label} <input {...props} ref={ref} />
       </label>
     </InputStyles>

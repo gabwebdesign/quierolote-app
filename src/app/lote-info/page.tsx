@@ -1,6 +1,8 @@
 "use client"
 import { Container } from '@/components/atoms/Container/Container';
+import { Typography } from '@/components/atoms/Typography/Typography';
 import { AgentCard } from '@/components/composites/agent-card/AgentCard';
+import { ContactForm } from '@/components/composites/ContactForm/ContactForm';
 import { Destacados } from '@/components/composites/destacados/Destacados';
 import { Footer } from '@/components/composites/footer/Footer';
 import { Header } from '@/components/composites/Header/Header';
@@ -37,7 +39,6 @@ export default function LoteInfo() {
 
   return (
     <main className={roboto.className}>
-      <Header />
       <div style={{ 
         display: 'flex', 
         width: '100%',
@@ -54,13 +55,28 @@ export default function LoteInfo() {
                         email={agentInfo.email}
                         pathImg={agentInfo.pathImg}
                       />
+
+                       <div className='contact-form-container'>
+                            <center>
+                              <Typography align="center" tag='h3' variant='heading3' color={theme.colors.purple}>
+                                  ¿Quieres ser contactado?
+                              </Typography>
+                            </center>
+                            <center>
+                            <Typography>
+                                Llena el siguiente formulario y nos pondremos en contacto con usted.
+                            </Typography>
+                            </center>
+
+                            <ContactForm />
+                        </div> 
+
                     </aside>
                   </PageStyles>
                 </Container>
       </div>
 
       <Destacados />
-      <Footer />
     </main>
   );
 }
