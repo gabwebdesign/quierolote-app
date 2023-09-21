@@ -8,8 +8,7 @@ interface InputStylesProps extends InputProps {
   theme?: Theme;
 }
 
-const InputBasic = (theme: Theme): Styles => ({
-  width: '100%',
+const InputCommon = (theme: Theme) => ({
   padding: '8px 11px',
   backgroundColor: theme.colors.secondary.dark,
   borderRadius: '8px',
@@ -17,12 +16,38 @@ const InputBasic = (theme: Theme): Styles => ({
   fontWeight: theme.fontWeight.bold,
   color: theme.colors.secondary.main,
   '&:focus': {
-    outline: theme.colors.primary.main
-  }
+    outline: theme.colors.primary.main,
+  },
 });
 
-const getInputStyles = ({theme}: InputStylesProps) => ({
-  ...InputBasic(theme!),
+const InputBasic = (theme: Theme): Styles => ({
+  '& input': {
+    ...InputCommon(theme)
+  },
 });
 
-export const InputStyles = styled.input<InputStylesProps>(getInputStyles);
+const InputLabel = (theme: Theme): Styles => ({
+  '& .label': {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 5,
+    fontWeight: theme.fontWeight.bold,
+    color: theme.colors.secondary.main,
+  },
+});
+
+const InputCheckbox = (theme: Theme): Styles => ({
+  '& input': {
+    ...InputCommon(theme),
+    width: 'auto',
+    alignSelf: 'flex-start',
+  },
+});
+
+const getInputStyles = ({ theme, type }: InputStylesProps) => ({
+  ...InputLabel(theme!),
+  ...(type === 'checkbox' && InputCheckbox(theme!)),
+  ...(type !== 'checkbox' && InputBasic(theme!)),
+});
+
+export const InputStyles = styled.div<InputStylesProps>(getInputStyles);

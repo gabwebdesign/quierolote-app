@@ -31,3 +31,8 @@ const getSelectStyles = ({ theme }: SelectStylesProps) => ({
 });
 
 export const SelectStyles = styled.select<SelectStylesProps>(getSelectStyles);
+
+export const LabelStyles = styled.label(({ theme }) => ({
+  fontWeight: theme.fontWeight.bold,
+  color: theme.colors.secondary.main,
+}));

@@ -19,7 +19,7 @@ interface FormInputProps<T extends FieldValues>
   register?: UseFormRegister<T>;
   name: Path<T>;
   rules?: RegisterOptions;
-  errors?: Partial<DeepMap<T, FieldError>>;
+  errors?: Partial<DeepMap<T, FieldError | FieldError[]>>;
 }
 
 export const FormInput = <T extends FieldValues>({

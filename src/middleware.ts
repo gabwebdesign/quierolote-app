@@ -1,4 +1,4 @@
-import { JWT, getToken } from 'next-auth/jwt';
+import {  getToken } from 'next-auth/jwt';
 import { NextRequest, NextResponse } from 'next/server';
 import { NextResponseMessage } from './utils/api/responseMessage';
 import { HttpStatusCode } from 'axios';
@@ -15,7 +15,7 @@ export async function middleware(req: NextRequest) {
     }
 
     if(req.url.includes('/admin')) {
-      return NextResponse.rewrite(new URL('/auth', req.url));
+      return NextResponse.redirect(new URL('/auth', req.url));
     }
   }
 

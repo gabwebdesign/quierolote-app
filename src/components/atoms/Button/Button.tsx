@@ -1,15 +1,14 @@
 'use client';
-import { HTMLAttributes, ReactNode } from 'react';
+import { ButtonHTMLAttributes, HTMLAttributes, HTMLProps, ReactNode } from 'react';
 import { ButtonStyles } from './ButtonStyles';
 import { MouseEvent } from 'react';
 
 export interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+  extends ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   tag?: Tag;
   children?: ReactNode;
   href?: string;
   target?: Target;
-  disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
   variant?: Variant;
@@ -42,7 +41,7 @@ export const Button = ({
 
   return (
     <ButtonComponent
-      onClick={handleOnClick}
+      onClick={onClick ? handleOnClick : undefined}
       variant={variant}
       color={color}
       {...rest}

@@ -5,7 +5,7 @@ import { withExceptionFilter } from '@/utils/error/filters';
 import { HttpStatusCode } from 'axios';
 import { isValidObjectId } from 'mongoose';
 import { ApiError } from 'next/dist/server/api-utils';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 interface Params {
   params?: {
@@ -79,5 +79,5 @@ const deleteLoteById = async (req: NextRequest, params?: Params) => {
   await lote.deleteOne();
   await db.disconnect();
 
-  return NextResponseMessage({ status: HttpStatusCode.NoContent, data: null });
+  return new Response(null, { status: HttpStatusCode.NoContent });
 };

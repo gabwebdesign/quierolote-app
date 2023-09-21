@@ -33,3 +33,5 @@ export const theme = {
     title:'50px',
   }
 };
+
+export type Breakpoints = keyof typeof theme.breakpoints;
