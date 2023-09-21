@@ -61,7 +61,7 @@ export const FilterForm = () => {
         <FormSelect
             id="provincia"
             name="provincia"
-            label="provincia"
+            label="Provincia:"
             register={register}
             defaultValue="Provincia*"
             options={[
@@ -77,7 +77,7 @@ export const FilterForm = () => {
         />
 
     <div>
-        <label>Tamaño</label>
+        <label>Tamaño:</label>
         <ReactSlider
             className="horizontal-slider"
             thumbClassName="example-thumb"
@@ -98,7 +98,7 @@ export const FilterForm = () => {
     </div>
 
     <div>
-        <label>Precio</label>
+        <label>Precio:</label>
         <ReactSlider
             className="horizontal-slider"
             thumbClassName="example-thumb"
