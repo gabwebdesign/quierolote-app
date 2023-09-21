@@ -22,6 +22,11 @@ const HeaderNav = (theme: Theme): Styles => ({
   'nav div':{
     display:'flex',
     width:'50%'
+  },
+  'nav ul':{
+    display:'flex',
+    listStyle:'none',
+    gap:'20px'
   }
 });
 
