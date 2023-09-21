@@ -2,7 +2,7 @@
 import { lotAtom } from '@/store/atoms';
 import { Lote } from '@/types/lote';
 import { useHydrateAtoms } from 'jotai/utils';
-import { useAtomValue } from 'jotai';
+import { useAtom, useAtomValue } from 'jotai';
 import { LoteUpdateStyles } from './LoteUpdateStyles';
 import { useForm } from 'react-hook-form';
 import { FormInput } from '../FormInput/FormInput';
@@ -10,13 +10,20 @@ import { FormSelect } from '../FormSelect/FormSelect';
 import { Button } from '@/components/atoms/Button/Button';
 import quieroLoteApi from '@/api/quieroLoteApi';
 import { useSession } from 'next-auth/react';
+import { useMemo, useState } from 'react';
+import Image from 'next/image';
+import { getImagePublicId } from '@/utils/api/imagePublicId';
+import { focusAtom } from 'jotai-optics';
+import { useRouter } from 'next/navigation';
 
 export interface LoteUpdateProps {
   lot: Lote | null;
 }
 
-interface FormProps extends Omit<Lote, 'createdAt' | 'updatedAt' | 'user' | 'images'> {
+interface FormProps
+  extends Omit<Lote, 'createdAt' | 'updatedAt' | 'user' | 'images'> {
   images?: string[] | File[];
+  imagesUpdate?: string[] | File[];
 }
 
 const estadoOptions = [
@@ -38,12 +45,19 @@ const estadoOptions = [
   },
 ];
 
+const focusImages = focusAtom(lotAtom, (optic) => optic.prop('images'));
+
 export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
   useHydrateAtoms([[lotAtom, lot!]]);
   const lote = useAtomValue(lotAtom);
+  const [isSaving, setIsSaving] = useState<boolean>(false);
+  const [focusedImages, setFocusedImages] = useAtom(focusImages);
+  const router = useRouter();
+  const isNewLot = useMemo(() => !lote._id, [lote]);
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<FormProps>({
     defaultValues: {
@@ -51,24 +65,81 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
       images: lote?.images ?? [],
     },
   });
-  
-  const { data: session } = useSession(); 
+
+  const { data: session } = useSession();
 
   const onSubmit = async (form: FormProps) => {
-    if (form!.images!.length > 6 || form!.images!.length < 1)
+    if (isNewLot && (form!.images!.length > 6 || form!.images!.length < 1))
       return alert('Las imagenes deben ser minimo 1 y maximo 6.');
-
+    setIsSaving(true);
     try {
-      const imagesUrls = await saveImages(form!.images as File[]);
-      const { data } = await quieroLoteApi({
-        url: '/admin/lotes',
-        method: form!._id ? 'PUT' : 'POST',
-        data: { ...form, images: imagesUrls, user: session?.user.id },
+      const { data } = await quieroLoteApi<{ status: number }>({
+        url: isNewLot ? '/admin/lotes' : `/admin/lotes/${form._id}`,
+        method: isNewLot ? 'POST' : 'PUT',
+        data: isNewLot
+          ? {
+              ...form,
+              images: await saveImages(form!.images as File[]),
+              user: session?.user.id,
+            }
+          : {
+              ...form,
+              ...(form.imagesUpdate && {
+                images: [
+                  ...form.images!,
+                  ...(await saveImages(form!.imagesUpdate as File[]))!,
+                ],
+              }),
+            },
       });
+
+      if (data.status === 200) {
+        router.replace('/admin/lots');
+        setIsSaving(false);
+      }
+    } catch (error) {
+      console.log({ error });
+      setIsSaving(false);
+    }
+  };
+
+  const handleImageDelete = async (url: string) => {
+    try {
+      const publicId = getImagePublicId(url);
+      const copyImages = [...focusedImages!];
+      const filteredImages = focusedImages?.filter(
+        (url) => !url.includes(publicId)
+      );
+      setFocusedImages(filteredImages);
+      setValue('images', filteredImages);
+      const { data } = await quieroLoteApi.delete<{ statusCode: number }>(
+        `/admin/cloudinary/${publicId}`
+      );
+      if (data.statusCode !== 204) {
+        setFocusedImages(copyImages);
+        setValue('images', copyImages);
+      }
     } catch (error) {
       console.log({ error });
     }
   };
+
+  const handleDeleteLot = async () => {
+    setIsSaving(true);
+    try {
+      const {data} = await quieroLoteApi<{status: number}>({
+        url:  `/admin/lotes/${lote._id}`,
+        method: 'DELETE',
+      });
+      if (data.status === 204) {
+        router.replace('/admin/lots');
+        setIsSaving(false);
+      }
+    } catch (error) {
+      console.log({ error });
+      setIsSaving(false);
+    }
+  }
 
   const saveImages = async (files: File[]): Promise<string[] | undefined> => {
     const imagesUrls: string[] = [];
@@ -87,7 +158,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
     } catch (error) {
       throw error;
     }
-  }
+  };
 
   return (
     <LoteUpdateStyles>
@@ -282,22 +353,58 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           rules={{}}
           errors={errors as any}
         />
-        <FormInput
-          id="images"
-          type="file"
-          name="images"
-          label="Imagenes *"
-          register={register}
-          rules={{}}
-          errors={errors as any}
-          accept="image/png, image/jpeg"
-          multiple
-        />
-        <div>
-          <Button variant="contained" color="primary">
-            Guardar
+        {isNewLot && (
+          <FormInput
+            id="images"
+            type="file"
+            name="images"
+            label="Imagenes *"
+            register={register}
+            rules={{}}
+            errors={errors as any}
+            accept="image/png, image/jpeg"
+            multiple
+          />
+        )}
+        {!isNewLot && (
+          <FormInput
+            id="images"
+            type="file"
+            name="imagesUpdate"
+            label="Agregar Imagenes *"
+            register={register}
+            rules={{}}
+            errors={errors as any}
+            accept="image/png, image/jpeg"
+            multiple
+          />
+        )}
+        {!isNewLot && lote.images && (
+          <div className="images">
+            {lote.images.map((url) => (
+              <div className="image" key={url}>
+                <div>
+                  <Image src={url} alt={url} fill unoptimized />
+                </div>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  type="button"
+                  disabled={isSaving}
+                  onClick={() => handleImageDelete(url)}
+                >
+                  Eliminar
+                </Button>
+              </div>
+            ))}
+          </div>
+        )}
+        <Button variant="contained" color="primary" type="submit" disabled={isSaving}>
+            {isNewLot ? 'Guardar' : 'Actualizar'}
           </Button>
-        </div>
+          {!isNewLot && <Button variant="outlined" color="primary" type="button" disabled={isSaving} onClick={handleDeleteLot}>
+            Eliminar
+          </Button>}
       </form>
     </LoteUpdateStyles>
   );
