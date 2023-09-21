@@ -294,7 +294,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           id="avaluo"
           type="checkbox"
           name="detalles.avaluo"
-          label="Avaluo*"
+          label="Avaluo"
           register={register}
           rules={{}}
           errors={errors as any}
@@ -303,7 +303,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           id="financiado"
           type="checkbox"
           name="detalles.financiado"
-          label="Financiado*"
+          label="Financiado"
           register={register}
           rules={{}}
           errors={errors as any}
@@ -312,7 +312,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           id="serviciosPublicos"
           type="checkbox"
           name="detalles.serviciosPublicos"
-          label="Servicios Publicos*"
+          label="Servicios Publicos"
           register={register}
           rules={{}}
           errors={errors as any}
@@ -321,7 +321,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           id="planoCatastro"
           type="checkbox"
           name="detalles.planoCatastro"
-          label="Plano Catastro*"
+          label="Plano Catastro"
           register={register}
           rules={{}}
           errors={errors as any}
@@ -330,7 +330,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           id="estudioAnteproyecto"
           type="checkbox"
           name="detalles.estudioAnteproyecto"
-          label="Estudio Anteproyecto*"
+          label="Estudio Anteproyecto"
           register={register}
           rules={{}}
           errors={errors as any}
@@ -339,7 +339,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           id="cuotaMantenimiento"
           type="checkbox"
           name="detalles.cuotaMantenimiento"
-          label="Cuota Mantenimiento*"
+          label="Cuota Mantenimiento"
           register={register}
           rules={{}}
           errors={errors as any}
@@ -348,7 +348,16 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           id="usoSuelo"
           type="checkbox"
           name="detalles.usoSuelo"
-          label="Uso Suelo*"
+          label="Uso Suelo"
+          register={register}
+          rules={{}}
+          errors={errors as any}
+        />
+        <FormInput
+          id="destacado"
+          type="checkbox"
+          name="destacado"
+          label="Destacado"
           register={register}
           rules={{}}
           errors={errors as any}

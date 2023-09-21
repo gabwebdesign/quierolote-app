@@ -103,6 +103,10 @@ const lotesSchema = new Schema(
       ref: 'User',
       required: true,
     },
+    destacado: {
+      type: Boolean,
+      default: false
+    },
     images: {
       type: [String],
       validate: {
