@@ -1,7 +1,6 @@
 'use client';
 import { lotAtom } from '@/store/atoms';
 import { Lote } from '@/types/lote';
-import { useHydrateAtoms } from 'jotai/utils';
 import { useAtom, useAtomValue } from 'jotai';
 import { LoteUpdateStyles } from './LoteUpdateStyles';
 import { useForm } from 'react-hook-form';
@@ -15,6 +14,7 @@ import Image from 'next/image';
 import { getImagePublicId } from '@/utils/api/imagePublicId';
 import { focusAtom } from 'jotai-optics';
 import { useRouter } from 'next/navigation';
+import { Initializer } from '@/store/Initializer';
 
 export interface LoteUpdateProps {
   lot: Lote | null;
@@ -48,7 +48,6 @@ const estadoOptions = [
 const focusImages = focusAtom(lotAtom, (optic) => optic.prop('images'));
 
 export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
-  useHydrateAtoms([[lotAtom, lot!]]);
   const lote = useAtomValue(lotAtom);
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [focusedImages, setFocusedImages] = useAtom(focusImages);
@@ -162,6 +161,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
 
   return (
     <LoteUpdateStyles>
+      <Initializer lot={lot} />
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormInput
           id="titulo"

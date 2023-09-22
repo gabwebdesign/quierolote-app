@@ -1,6 +1,6 @@
 import { dbLots } from '@/database';
 import PaginationPage from '@/components/composites/PaginationPage/PaginationPage';
-import { LotsInitialiazer } from '@/components/initaliazers/lots';
+import { Initializer } from '@/store/Initializer';
 
 const getData = async () => dbLots.getAllLots();
 
@@ -9,7 +9,7 @@ export default async function LoteInfo() {
 
   return (
     <>
-      <LotsInitialiazer lots={lotes} />
+      <Initializer lots={lotes} />
       <PaginationPage />
     </>
   );

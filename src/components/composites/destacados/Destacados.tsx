@@ -3,10 +3,10 @@ import { Container } from '@/components/atoms/Container/Container';
 import { CardLote } from '../card-lote/CardLote';
 import { DestacadosStyles } from './DestacadosStyles';
 import { useAtomValue } from 'jotai';
-import { lotsDestacados } from '@/store/atoms';
+import { lotsDestacadosAtom } from '@/store/atoms';
 
 export const Destacados = () => {
-  const lots = useAtomValue(lotsDestacados);
+  const lots = useAtomValue(lotsDestacadosAtom);
 
   if (!lots || lots?.length < 1) return null;
 
