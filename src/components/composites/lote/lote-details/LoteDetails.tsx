@@ -85,7 +85,7 @@ export const LoteDetails = () => {
             color={theme.colors.primary.main}
             fontWeight="bold"
           >
-            ${lot!.detalles?.precio?.toFixed(2)}
+            ₡{lot!.detalles?.precio?.toFixed(2)}
           </Typography>
           <Typography fontWeight="bold" textSize="xl">
             {lot!.detalles?.terreno} m<sup>2</sup>
