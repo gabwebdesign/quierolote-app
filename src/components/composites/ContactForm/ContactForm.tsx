@@ -43,7 +43,7 @@ export const ContactForm = () => {
                     <option>Casa Propia</option>
                     <option>Inversión</option>
                 </select>
-                <textarea name="txtname" rows="4" cols="50" maxlength="200" placeholder='Quiero mas información de este lote encontrado en Quierolote.com' required />
+                <textarea name="txtname" rows="4" cols="50" maxLength="200" placeholder='Quiero mas información de este lote encontrado en Quierolote.com' required />
             </div>
         </div>
     </div>
