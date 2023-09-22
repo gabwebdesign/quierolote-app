@@ -43,6 +43,9 @@ const ContactFormElements = (): Styles => ({
         border: 'none',
         fontWeight: '700',
         color: '#707070'
+    },
+    '& textarea':{
+      resize:'none'
     }
 });
 
