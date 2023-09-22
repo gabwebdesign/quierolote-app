@@ -13,11 +13,11 @@ const userSchema = new Schema(
     role: {
       type: String,
       enum: {
-        values: ['admin', 'user'],
+        values: ['admin', 'agente'],
         message: '{VALUE} solo puede ser alguno de los siguientes admin o user',
         required: true,
       },
-      default: 'user',
+      default: 'agente',
     },
     email: {
       type: String,

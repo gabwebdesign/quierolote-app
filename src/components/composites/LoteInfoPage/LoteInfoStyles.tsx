@@ -55,5 +55,5 @@ const generatePageStyles = ({ theme }: PageStylesProps) => ({
   ...PageElements(theme!)
 });
 
-export const PageStyles =
+export const LoteInfoStyles =
   styled.div<PageStylesProps>(generatePageStyles);

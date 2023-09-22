@@ -9,6 +9,7 @@ export interface Lote {
   user?: User | string;
   images?: string[];
   estado?: LoteEstado;
+  destacado?: boolean;
 
   createdAt?: string;
   updatedAt?: string;
