@@ -126,8 +126,8 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
   const handleDeleteLot = async () => {
     setIsSaving(true);
     try {
-      const {data} = await quieroLoteApi<{status: number}>({
-        url:  `/admin/lotes/${lote._id}`,
+      const { data } = await quieroLoteApi<{ status: number }>({
+        url: `/admin/lotes/${lote._id}`,
         method: 'DELETE',
       });
       if (data.status === 204) {
@@ -138,7 +138,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
       console.log({ error });
       setIsSaving(false);
     }
-  }
+  };
 
   const saveImages = async (files: File[]): Promise<string[] | undefined> => {
     const imagesUrls: string[] = [];
@@ -246,12 +246,21 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           }}
           errors={errors as any}
         />
-        <FormInput
+        <FormSelect
           id="provincia"
-          type="text"
           name="direccion.provincia"
           label="Provincia*"
           register={register}
+          defaultValue="Provincia*"
+          options={[
+            { name: 'San José', value: 'sanjose' },
+            { name: 'Alajuela', value: 'alajuela' },
+            { name: 'Heredia', value: 'heredia' },
+            { name: 'Cartago', value: 'cartago' },
+            { name: 'Limón', value: 'limon' },
+            { name: 'Guanacaste', value: 'guanacaste' },
+            { name: 'Puntarenas', value: 'puntarenas' },
+          ]}
           rules={{
             required: 'Provincia es requerido.',
           }}
@@ -408,12 +417,25 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
             ))}
           </div>
         )}
-        <Button variant="contained" color="primary" type="submit" disabled={isSaving}>
-            {isNewLot ? 'Guardar' : 'Actualizar'}
-          </Button>
-          {!isNewLot && <Button variant="outlined" color="primary" type="button" disabled={isSaving} onClick={handleDeleteLot}>
+        <Button
+          variant="contained"
+          color="primary"
+          type="submit"
+          disabled={isSaving}
+        >
+          {isNewLot ? 'Guardar' : 'Actualizar'}
+        </Button>
+        {!isNewLot && (
+          <Button
+            variant="outlined"
+            color="primary"
+            type="button"
+            disabled={isSaving}
+            onClick={handleDeleteLot}
+          >
             Eliminar
-          </Button>}
+          </Button>
+        )}
       </form>
     </LoteUpdateStyles>
   );

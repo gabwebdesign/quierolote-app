@@ -89,6 +89,9 @@ const FilterFormElements = (theme:Theme): Styles => ({
       height:'10px',
     },
     '& .button-container':{
+      gap: 10,
+      display: 'flex',
+      justifyContent: 'flex-end',
       [generateBreakpoint('min-width',theme.breakpoints.md)]: {
         gridColumnStart:'3'
       }

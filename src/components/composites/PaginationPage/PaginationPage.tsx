@@ -52,7 +52,9 @@ export default function PaginationPage() {
               mide={`${lote.detalles!.terreno!}`}
               price={`${lote.detalles!.precio!}`}
               location={`${
-                (lote.direccion?.provincia, lote.direccion?.canton)
+                lote!.direccion?.provincia
+              }, ${lote!.direccion?.canton}, ${
+                lote!.direccion?.distrito
               }`}
               pathImg={lote.images![0]}
               id={lote._id}
