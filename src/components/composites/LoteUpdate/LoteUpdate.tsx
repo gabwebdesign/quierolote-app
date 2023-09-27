@@ -8,7 +8,6 @@ import { FormInput } from '../FormInput/FormInput';
 import { FormSelect } from '../FormSelect/FormSelect';
 import { Button } from '@/components/atoms/Button/Button';
 import quieroLoteApi from '@/api/quieroLoteApi';
-import { useSession } from 'next-auth/react';
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { getImagePublicId } from '@/utils/api/imagePublicId';
@@ -54,7 +53,8 @@ export const LoteUpdate = ({ lot, users }: LoteUpdateProps) => {
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [focusedImages, setFocusedImages] = useAtom(focusImages);
   const router = useRouter();
-  const isNewLot = useMemo(() => !lote._id, [lote]);
+  const isNewLot = useMemo(() => !lot?._id, [lot]);
+  const userName = useMemo(() =>  users?.filter((user) => user?._id === lot?.user)[0]?.name?.toLowerCase(), [users]);
   const {
     register,
     handleSubmit,
@@ -62,13 +62,13 @@ export const LoteUpdate = ({ lot, users }: LoteUpdateProps) => {
     formState: { errors },
   } = useForm<FormProps>({
     defaultValues: {
-      ...lote,
-      images: lote?.images ?? [],
+      ...lot,
+      images: lot?.images ?? [],
+      ...(!isNewLot && {user: userName})
     },
   });
   const userOptions = useMemo(() => users.map((user) => ({name: user.name!, value: user._id!})), [users]);
-
-  const { data: session } = useSession();
+ 
 
   const onSubmit = async (form: FormProps) => {
     if (isNewLot && (form!.images!.length > 6 || form!.images!.length < 1))
