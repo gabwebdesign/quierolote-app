@@ -10,10 +10,10 @@ import { useAtom, useAtomValue, useSetAtom } from 'jotai';
 import {
   lostFilteredAtom,
   lotsAtom,
-  lotsAtomCopy,
+  lotsFilterOptionsAtom,
 } from '@/store/atoms';
 
-type FilterForm = {
+export type FilterForm = {
   provincia: string;
   tamaño: string[];
   precio: string[];
@@ -25,9 +25,7 @@ export const FilterForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FilterForm>();
-  const lotsFiltered = useSetAtom(lostFilteredAtom);
-  const [lotsCopy, setLotsCopy] = useAtom(lotsAtomCopy);
-  const lots = useSetAtom(lotsAtom);
+  const filterOptions = useSetAtom(lotsFilterOptionsAtom);
 
   const [minSize, setMinSize] = useState('10');
   const [maxSize, setMaxSize] = useState('50000000');
@@ -36,7 +34,7 @@ export const FilterForm = () => {
   const [maxPrice, setMaxPrice] = useState('50000000');
 
   const onSubmit = handleSubmit((data) => {
-    lotsFiltered({
+    filterOptions({
       price: {
         min: +minPrice.replaceAll(',', ''),
         max: +maxPrice.replaceAll(',', ''),
@@ -72,8 +70,7 @@ export const FilterForm = () => {
   };
 
   const handleClearFilters = () => {
-    lots(lotsCopy);
-    setLotsCopy(null);
+    filterOptions(null);
   };
 
   return (

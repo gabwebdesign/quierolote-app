@@ -5,11 +5,11 @@ import { CardLote } from '@/components/composites/card-lote/CardLote';
 import { PaginationComp } from '@/components/composites/paginationComp/PaginationComp';
 import { FilterForm } from '@/components/composites/FilterForm/FilterForm';
 import { useAtomValue } from 'jotai';
-import { lotsAtom } from '@/store/atoms';
+import { lostFilteredAtom } from '@/store/atoms';
 import { roboto } from '@/utils/css/utilities';
 
 export default function PaginationPage() {
-  const lotes = useAtomValue(lotsAtom);
+  const lotes = useAtomValue(lostFilteredAtom);
   const [currentPage, setCurrentPage] = useState(1);
   const [lotesPerPage, setlotesPerPage] = useState(10);
 

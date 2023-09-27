@@ -12,7 +12,7 @@ export const stepValidAtom = atom<boolean>(true);
 
 export const lotsDestacadosAtom = atom<Lote[] | null>(null);
 export const lotsAtom = atom<Lote[] | null>(null);
-export const lotsAtomCopy = atom<Lote[] | null>(null);
+export const lotsFilterOptionsAtom = atom<FilterOptions | null>(null);
 
 interface FilterOptions {
   provincia: string;
@@ -28,11 +28,15 @@ interface FilterOptions {
 
 const filterLots = (
   lots: Lote[] | null,
-  { provincia, price, terreno }: FilterOptions
+  filterOptions: FilterOptions | null
 ): Lote[] => {
-  if (!lots) return [];
+  if (!lots && !filterOptions) return [];
 
-  return lots.filter(
+  if (!filterOptions) return lots!;
+
+  const {provincia, price, terreno} = filterOptions;
+
+  return lots!.filter(
     (lot) =>
       lot.direccion?.provincia?.toLowerCase() === provincia.toLowerCase() &&
       +lot!.detalles!.precio! <= price.max &&
@@ -42,10 +46,9 @@ const filterLots = (
   );
 };
 
-export const lostFilteredAtom = atom(
-  () => [],
-  (get, set, filterOptions: FilterOptions) => {
-    set(lotsAtomCopy, get(lotsAtom))
-    set(lotsAtom, filterLots(get(lotsAtom), filterOptions));
-  }
-);
+export const lostFilteredAtom = atom((get) => {
+  const originalLots = get(lotsAtom);
+  const filterOptions = get(lotsFilterOptionsAtom);
+
+  return filterLots(originalLots, filterOptions)
+});
