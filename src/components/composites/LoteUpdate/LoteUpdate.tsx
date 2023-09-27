@@ -92,7 +92,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
             },
       });
 
-      if (data.status === 200) {
+      if (data.status === 200 || data.status === 201) {
         router.replace('/admin/lots');
         setIsSaving(false);
       }

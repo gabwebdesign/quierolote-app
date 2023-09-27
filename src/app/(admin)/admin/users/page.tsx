@@ -1,12 +1,12 @@
 import { Button } from '@/components/atoms/Button/Button';
 import { Container } from '@/components/atoms/Container/Container';
-import { LotDatagrid } from '@/components/composites/LotDatagrid/LotDatagrid';
-import { dbLots } from '@/database';
+import { UserDatagrid } from '@/components/composites/UserDatagrid/UserDatagrid';
+import { dbUsers } from '@/database';
 import { roboto } from '@/utils/css/utilities';
 
-const getData = async () => dbLots.getAllLots();
+const getData = async () => dbUsers.getAllUsers();
 
-export default async function LotsAdmin() {
+export default async function UsersAdmin() {
   const data = await getData();
 
   return (
@@ -15,12 +15,12 @@ export default async function LotsAdmin() {
         variant="contained"
         color="primary"
         rel="noreferrer"
-        href={`/admin/lots/new`}
+        href={`/admin/users/new`}
         tag="a"
       >
-        Crear Lote
+        Crear Usuario
       </Button>
-      <LotDatagrid lots={data} />
+      <UserDatagrid users={data} />
     </Container>
   );
 }

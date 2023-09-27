@@ -52,10 +52,24 @@ export const hashPassword = async (password: string): Promise<string> => {
   return await bcrypt.hash(password, 10);
 };
 
-export const getAllUsers = async (): Promise<User> => {
+export const getAllUsers = async (): Promise<User[]> => {
   await db.connect();
-  const users = await Users.find().select('phone email picture name').lean();
+  const users = await Users.find().select('phone email name password').lean();
   await db.disconnect();
 
   return JSON.parse(JSON.stringify(users));
 };
+
+export const getUserById = async (id: string): Promise<User | null> => {
+  await db.connect();
+  const user = await Users.findById(id)
+    .lean();
+  await db.disconnect();
+
+  if (!user) {
+    return null;
+  }
+
+  return JSON.parse(JSON.stringify(user));
+};
+

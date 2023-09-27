@@ -1,19 +1,10 @@
 'use client';
-import { Button } from '@/components/atoms/Button/Button';
 import { Container } from '@/components/atoms/Container/Container';
 import { Icon } from '@/components/atoms/Icon/Icon';
-import { Typography } from '@/components/atoms/Typography/Typography';
 import { useTheme } from '@emotion/react';
 import { HeaderStyles } from './HeaderStyles';
 import Link from 'next/link';
-import { Roboto } from 'next/font/google';
-
-export const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+import { roboto } from '@/utils/css/utilities';
 
 export const Header = () => {
   const theme = useTheme();

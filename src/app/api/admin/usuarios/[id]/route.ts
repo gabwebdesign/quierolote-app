@@ -86,5 +86,5 @@ const deleteUsuarioById = async (req: NextRequest, params?: Params) => {
   await user.deleteOne();
   await db.disconnect();
 
-  return NextResponseMessage({ status: HttpStatusCode.NoContent, data: null });
+  return new Response(null, { status: HttpStatusCode.NoContent });
 };
