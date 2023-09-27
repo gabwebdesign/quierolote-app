@@ -1,6 +1,6 @@
 import { Container } from '@/components/atoms/Container/Container';
 import { LoteUpdate } from '@/components/composites/LoteUpdate/LoteUpdate';
-import { Lotes, dbLots } from '@/database';
+import { Lotes, dbLots, dbUsers } from '@/database';
 import { Lote } from '@/types/lote';
 import { roboto } from '@/utils/css/utilities';
 
@@ -22,10 +22,11 @@ const getData = async (id: string) => {
 
 export default async function LotsCrudPage({ params }: Params) {
   const lot = await getData(params.id);
+  const users = await dbUsers.getAllUsers();
   
   return (
     <Container maxWidth="lg" className={roboto.className}>
-      <LoteUpdate lot={lot} />
+      <LoteUpdate lot={lot} users={users} />
     </Container>
   );
 }
