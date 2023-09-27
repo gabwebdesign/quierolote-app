@@ -6,19 +6,12 @@ import { ContactForm } from '@/components/composites/ContactForm/ContactForm';
 import { Destacados } from '@/components/composites/destacados/Destacados';
 import { Lote } from '@/components/composites/lote/Lote';
 import { useTheme } from '@emotion/react';
-import { Roboto } from 'next/font/google';
 import { HTMLAttributes } from 'react';
 import { LoteInfoStyles } from './LoteInfoStyles';
 import { useAtomValue } from 'jotai';
 import { lotAtom } from '@/store/atoms';
 import { User } from '@/types/user';
-
-const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+import { roboto } from '@/utils/css/utilities';
 
 export interface AgentCardProps extends HTMLAttributes<HTMLElement> {
   agentName: string;

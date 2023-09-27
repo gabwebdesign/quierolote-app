@@ -2,7 +2,7 @@
 import { useMemo } from 'react';
 import DataGrid, { Column } from 'react-data-grid';
 import { DatagridStyles } from './DatagridUIStyles';
-import { roboto } from '@/app/page';
+import { roboto } from '@/utils/css/utilities';
 
 export interface DatagridProps<TRow> {
   columns: Column<TRow>[];

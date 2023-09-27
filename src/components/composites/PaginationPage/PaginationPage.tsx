@@ -1,19 +1,12 @@
 'use client';
 import { Container } from '@/components/atoms/Container/Container';
-import { Roboto } from 'next/font/google';
 import { useState } from 'react';
 import { CardLote } from '@/components/composites/card-lote/CardLote';
 import { PaginationComp } from '@/components/composites/paginationComp/PaginationComp';
 import { FilterForm } from '@/components/composites/FilterForm/FilterForm';
 import { useAtomValue } from 'jotai';
 import { lotsAtom } from '@/store/atoms';
-
-const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+import { roboto } from '@/utils/css/utilities';
 
 export default function PaginationPage() {
   const lotes = useAtomValue(lotsAtom);

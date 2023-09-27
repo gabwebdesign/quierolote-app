@@ -1,7 +1,9 @@
 import { Container } from '@/components/atoms/Container/Container';
 import { LoteUpdate } from '@/components/composites/LoteUpdate/LoteUpdate';
+import { UserUpdate } from '@/components/composites/UserUpdate/UserUpdate';
 import { Lotes, dbLots, dbUsers } from '@/database';
 import { Lote } from '@/types/lote';
+import { User } from '@/types/user';
 import { roboto } from '@/utils/css/utilities';
 
 interface Params {
@@ -12,21 +14,20 @@ interface Params {
 
 const getData = async (id: string) => {
   if (id === 'new') {
-    const tempLot: Lote = JSON.parse(JSON.stringify(new Lotes()));
-    delete tempLot._id;
-    return tempLot;
+    const tempUser: User = JSON.parse(JSON.stringify(new Lotes()));
+    delete tempUser._id;
+    return tempUser;
   }
 
-  return dbLots.getLotById(id);
+  return dbUsers.getUserById(id);
 };
 
-export default async function LotsCrudPage({ params }: Params) {
-  const lot = await getData(params.id);
-  const users = await dbUsers.getAllUsers();
+export default async function UserCrudPage({ params }: Params) {
+  const user = await getData(params.id);
   
   return (
     <Container maxWidth="lg" className={roboto.className}>
-      <LoteUpdate lot={lot} users={users} />
+      <UserUpdate user={user} />
     </Container>
   );
 }

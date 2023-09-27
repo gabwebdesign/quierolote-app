@@ -15,13 +15,15 @@ import { getImagePublicId } from '@/utils/api/imagePublicId';
 import { focusAtom } from 'jotai-optics';
 import { useRouter } from 'next/navigation';
 import { Initializer } from '@/store/Initializer';
+import { User } from '@/types/user';
 
 export interface LoteUpdateProps {
   lot: Lote | null;
+  users: User[];
 }
 
 interface FormProps
-  extends Omit<Lote, 'createdAt' | 'updatedAt' | 'user' | 'images'> {
+  extends Omit<Lote, 'createdAt' | 'updatedAt' | 'images'> {
   images?: string[] | File[];
   imagesUpdate?: string[] | File[];
 }
@@ -47,7 +49,7 @@ const estadoOptions = [
 
 const focusImages = focusAtom(lotAtom, (optic) => optic.prop('images'));
 
-export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
+export const LoteUpdate = ({ lot, users }: LoteUpdateProps) => {
   const lote = useAtomValue(lotAtom);
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [focusedImages, setFocusedImages] = useAtom(focusImages);
@@ -64,6 +66,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
       images: lote?.images ?? [],
     },
   });
+  const userOptions = useMemo(() => users.map((user) => ({name: user.name!, value: user._id!})), [users]);
 
   const { data: session } = useSession();
 
@@ -79,7 +82,6 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           ? {
               ...form,
               images: await saveImages(form!.images as File[]),
-              user: session?.user.id,
             }
           : {
               ...form,
@@ -92,7 +94,7 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
             },
       });
 
-      if (data.status === 200) {
+      if (data.status === 200 || data.status === 201) {
         router.replace('/admin/lots');
         setIsSaving(false);
       }
@@ -263,6 +265,18 @@ export const LoteUpdate = ({ lot }: LoteUpdateProps) => {
           ]}
           rules={{
             required: 'Provincia es requerido.',
+          }}
+          errors={errors as any}
+        />
+         <FormSelect
+          id="user"
+          name="user"
+          label="Usuario*"
+          register={register}
+          defaultValue="Usuario*"
+          options={userOptions}
+          rules={{
+            required: 'Usuarios es requerido.',
           }}
           errors={errors as any}
         />
