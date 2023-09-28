@@ -28,7 +28,7 @@ export const CardLote = ({
     <Link href={`/lote-info/${id}`} style={{textDecoration: 'none'}}>
       <CardLoteStyles>
         <Typography fontWeight="bold">{shortDresciption}</Typography>
-        <img src={`assets/images/${pathImg}`} />
+        <img src={pathImg} />
         <div className="location">
           <Icon name="Location" width={28} height={28} />
           <Typography>{location}</Typography>

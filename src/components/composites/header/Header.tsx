@@ -13,7 +13,10 @@ export const Header = () => {
       <Container maxWidth="xl" tag="div">
         <nav>
           <div id="nav-brand">
-            <Icon name="Logo" width={190} height={40} fill={theme.colors.primary.main} />
+            <Link href='/'>
+              <Icon name="Logo" width={190} height={40} fill={theme.colors.primary.main} />
+            </Link>
+            
           </div>
           <div
             id="menu"

@@ -27,10 +27,10 @@ export const FilterForm = () => {
   } = useForm<FilterForm>();
   const filterOptions = useSetAtom(lotsFilterOptionsAtom);
 
-  const [minSize, setMinSize] = useState('10');
+  const [minSize, setMinSize] = useState('1');
   const [maxSize, setMaxSize] = useState('50000000');
 
-  const [minPrice, setMinPrice] = useState('10');
+  const [minPrice, setMinPrice] = useState('1');
   const [maxPrice, setMaxPrice] = useState('50000000');
 
   const onSubmit = handleSubmit((data) => {
@@ -100,9 +100,9 @@ export const FilterForm = () => {
           className="horizontal-slider"
           thumbClassName="example-thumb"
           trackClassName="example-track"
-          defaultValue={[50, 50000000]}
+          defaultValue={[1, 50000000]}
           max={50000000}
-          min={50}
+          min={1}
           ariaLabel={['Lower thumb', 'Upper thumb']}
           ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
           onChange={(value, index) => sizeSliderHandler({ value, index })}
@@ -125,9 +125,9 @@ export const FilterForm = () => {
           className="horizontal-slider"
           thumbClassName="example-thumb"
           trackClassName="example-track"
-          defaultValue={[50, 50000000]}
+          defaultValue={[1, 50000000]}
           max={50000000}
-          min={50}
+          min={1}
           ariaLabel={['Lower thumb', 'Upper thumb']}
           ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
           onChange={(value, index) => priceSliderHandler({ value, index })}
