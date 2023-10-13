@@ -1,11 +1,10 @@
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.forwardemail.net",
-  port: 465,
+  host: "smtp.gmail.com",
+  port: 567,
   secure: true,
   auth: {
-    // TODO: replace `user` and `pass` values from <https://forwardemail.net>
     user: process.env.NODEMAILER_USER,
     pass: process.env.NODEMAILER_PASSWORD,
   },
@@ -14,9 +13,9 @@ const transporter = nodemailer.createTransport({
 export const sendEmail = async () => {
   try {
     const info = await transporter.sendMail({
-      from: process.env.NODEMAILER_USER, // sender address
-      to: "bar@example.com, baz@example.com", // list of receivers
-      subject: "Hello ✔", // Subject line
+      from: process.env.NODEMAILER_USER,
+      to: "your_email_here", 
+      subject: "Hello ✔", 
       text: "Hello world?", // plain text body
       html: "<b>Hello world?</b>", // html body
     });
