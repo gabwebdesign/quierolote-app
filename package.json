@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start -H 0.0.0.0 -p PORT:-8080",
-    "build:": "yarn install --production=false && yarn run build && rm -rf node_modules && yarn install --production --frozen-lockfile",
+    "build:": "npm yarn install --production=true && yarn run build && rm -rf node_modules && yarn install --production --frozen-lockfile",
     "lint": "next lint",
     "format": "yarn prettier --write {,!(node_modules)/**/}*.{ts,tsx,css} --config ./.prettierrc.json"
   },
