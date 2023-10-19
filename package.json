@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start -H 0.0.0.0 -p PORT:-8080",
-    "build:": "npm yarn install --production=true && yarn run build && rm -rf node_modules && yarn install --production --frozen-lockfile",
-    "build:digitalocean": "npm install --production=false && npm run build && npm ci",
+    "build:": "npm install --production=true && npm run build && npm ci",
+    "build:digitalocean": "npm install --production=true && npm run build && npm ci",
     "lint": "next lint",
     "format": "yarn prettier --write {,!(node_modules)/**/}*.{ts,tsx,css} --config ./.prettierrc.json"
   },
