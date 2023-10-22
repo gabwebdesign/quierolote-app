@@ -5,12 +5,13 @@ import { Typography } from '@/components/atoms/Typography/Typography';
 import { useTheme } from '@emotion/react';
 import { CardIcon, CardIconProps } from '../CardIcon/CardIcon';
 import { FooterStyles } from './FooterStyles';
+import { roboto } from '@/utils/css/utilities';
 
 export const Footer=()=>{
     const theme = useTheme();
 
     return(
-        <FooterStyles>
+        <FooterStyles className={roboto.className}>
             <Container maxWidth="xl">
                 <div className='footer-content'>
                     <div className="lotes">
