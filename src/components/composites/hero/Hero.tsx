@@ -21,7 +21,7 @@ export const Hero=()=>{
                             color={theme.colors.white}
                         >
                             
-                            Expertos Inmobiliarios,<br /> Expertos en Lotes.
+                            Asesores Inmobiliarios,<br /> Expertos en Lotes.
                         </Typography>
                     </div>
                     <div
