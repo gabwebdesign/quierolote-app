@@ -12,7 +12,7 @@ export const Header = () => {
     <HeaderStyles className={roboto.className}>
       <Container maxWidth="xl" tag="div">
         <nav>
-          <div id="nav-brand">
+          <div id="nav-brand" className="nav-brand">
             <Link href='/'>
               <Icon name="Logo" width={190} height={40} fill={theme.colors.primary.main} />
             </Link>
@@ -20,7 +20,7 @@ export const Header = () => {
           </div>
           <div
             id="menu"
-            style={{ display: 'flex', justifyContent: 'flex-end' }}
+            className="menu"
           >
             <ul>
               <li>

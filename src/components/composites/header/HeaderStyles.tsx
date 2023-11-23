@@ -15,9 +15,29 @@ const HeaderNav = (theme: Theme): Styles => ({
   '& nav': {
     display: 'flex',
     justifyContent: 'space-between',
-    [generateBreakpoint('max-width', theme.breakpoints.md)]: {
-      display: 'block',
+    [generateBreakpoint('max-width', theme.breakpoints.sm)]: {
+      width: '100%',
+      flexDirection:'column',
+      justifyContent: 'center',
+      gap:'20px'
     },
+  },
+  '& .menu': {
+    display:'flex',
+    justifyContent:'flex-end',
+    [generateBreakpoint('max-width', theme.breakpoints.sm)]: {
+      width: '100%',
+      flexDirection:'column',
+      justifyContent: 'center',
+      alignItems:'center'
+    }
+  },
+  '& .nav-brand':{
+    display:'flex',
+    [generateBreakpoint('max-width', theme.breakpoints.sm)]: {
+      width:'100%',
+      justifyContent:'center'
+    }
   },
   'nav div':{
     display:'flex',
@@ -27,6 +47,9 @@ const HeaderNav = (theme: Theme): Styles => ({
     display:'flex',
     listStyle:'none',
     gap:'20px'
+  },
+  'nav ul li a':{
+      textDecoration:'none'
   }
 });
 
